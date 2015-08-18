@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 50af6292ef3086d85ed8ff20d805cfd8ca64a076
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%2050af6292ef3086d85ed8ff20d805cfd8ca64a076&In-Reply-To=%3C20120501173031.797A155B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000253.html">
+   <LINK REL="Next"  HREF="000255.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 50af6292ef3086d85ed8ff20d805cfd8ca64a076</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%2050af6292ef3086d85ed8ff20d805cfd8ca64a076&In-Reply-To=%3C20120501173031.797A155B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 50af6292ef3086d85ed8ff20d805cfd8ca64a076">noreply at berlios.de
+       </A><BR>
+    <I>Tue May  1 19:30:31 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000253.html">[sgd-en] GRUB
+</A></li>
+        <LI>Next message: <A HREF="000255.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 1ba0d8767ec1630a9ad4689542815b21b7ae335c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#254">[ date ]</a>
+              <a href="thread.html#254">[ thread ]</a>
+              <a href="subject.html#254">[ subject ]</a>
+              <a href="author.html#254">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  50af6292ef3086d85ed8ff20d805cfd8ca64a076 (commit)
+       via  72df3d742f3c0f1d7e3388f18efaeb31b885107f (commit)
+       via  a806273e0d21e4daeb90b66b3881d6060f64f850 (commit)
+       via  34c71bf5302c1f8cf5dfe01b59546576f4078469 (commit)
+       via  9760b20759c8fead0f4e84a7258bf4efc0a59802 (commit)
+       via  359fd11a4e29076c32ba748c54c2c640727e7442 (commit)
+      from  cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 50af6292ef3086d85ed8ff20d805cfd8ca64a076
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Apr 30 22:37:37 2012 -0700
+
+    Use gfxterm by default
+    
+     * Use gfxterm by default but allow the user to prevent the use of
+     * gfxterm by holding shift during boot. This allows the display of
+     * non-ASCII characters, which means that from here on translators
+     * should feel free (and are encouraged) to use non-ASCII characters to
+     * properly represent their language in their translations.
+    
+     * This commit adds a dependancy on Unifont, which is a monospace font
+     * with great Unicode coverage.
+
+commit 72df3d742f3c0f1d7e3388f18efaeb31b885107f
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Apr 30 22:29:09 2012 -0700
+
+    Specify charset=UTF-8 in fr.po
+
+commit a806273e0d21e4daeb90b66b3881d6060f64f850
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Apr 30 22:26:47 2012 -0700
+
+    Update INSTALL
+
+commit 34c71bf5302c1f8cf5dfe01b59546576f4078469
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Apr 29 16:23:09 2012 -0700
+
+    Use $prefix in the path for secondary_locale_dir
+    
+     * Otherwise the translations won't be found if the SG2D scripts are
+     * used in a grub installation with a separate /boot/, a /boot/grub2/
+     * rather than /boot/grub/, etc.
+
+commit 9760b20759c8fead0f4e84a7258bf4efc0a59802
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Apr 29 16:17:45 2012 -0700
+
+    Make &quot;Press escape...&quot; string properaly translatable
+    
+     * You'll notice that by adding a new string, then running ./update_po,
+     * all of the files in po/ have been updated with references to the new
+     * string, and to changes in the line numbers of existing strings.
+
+commit 359fd11a4e29076c32ba748c54c2c640727e7442
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Apr 29 15:34:27 2012 -0700
+
+    Remove old translation code
+    
+     * Again, this should have been done in an earlier commit. Sorry about
+     * that.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ INSTALL            |   25 ++++++-------------------
+ menus/main.cfg     |   43 ++++++++++++++++++++++++++++---------------
+ po/de.po           |   36 +++++++++++++++++++++---------------
+ po/es.po           |   30 +++++++++++++++++-------------
+ po/fr.po           |   39 +++++++++++++++++++++++----------------
+ po/ms.po           |   34 ++++++++++++++++++++--------------
+ po/sgrub.pot       |   36 ++++++++++++++++++++----------------
+ supergrub-mkrescue |   20 ++++++++++++++++++++
+ 8 files changed, 155 insertions(+), 108 deletions(-)
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000253.html">[sgd-en] GRUB
+</A></li>
+	<LI>Next message: <A HREF="000255.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 1ba0d8767ec1630a9ad4689542815b21b7ae335c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#254">[ date ]</a>
+              <a href="thread.html#254">[ thread ]</a>
+              <a href="subject.html#254">[ subject ]</a>
+              <a href="author.html#254">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 264383a99d4c4ab97a7145d57bdd96404ce30622
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20264383a99d4c4ab97a7145d57bdd96404ce30622&In-Reply-To=%3C201003102243.o2AMhCaQ026618%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000078.html">
+   <LINK REL="Next"  HREF="000080.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 264383a99d4c4ab97a7145d57bdd96404ce30622</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20264383a99d4c4ab97a7145d57bdd96404ce30622&In-Reply-To=%3C201003102243.o2AMhCaQ026618%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 264383a99d4c4ab97a7145d57bdd96404ce30622">noreply at berlios.de
+       </A><BR>
+    <I>Wed Mar 10 23:43:12 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000078.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 48496d67ee44f12ef2ae8e5d603b994d32b9aa22
+</A></li>
+        <LI>Next message: <A HREF="000080.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#79">[ date ]</a>
+              <a href="thread.html#79">[ thread ]</a>
+              <a href="subject.html#79">[ subject ]</a>
+              <a href="author.html#79">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  264383a99d4c4ab97a7145d57bdd96404ce30622 (commit)
+       via  ac7e23a2754bdba983e6fde65588132aa186b530 (commit)
+      from  48496d67ee44f12ef2ae8e5d603b994d32b9aa22 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 264383a99d4c4ab97a7145d57bdd96404ce30622
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">jordan at jordan-desktop.</A>(none)&gt;
+Date:   Tue Mar 9 22:32:23 2010 -0800
+
+    Add options for grub's direct PATA and USB support
+    
+     * Inserting ata.mod disables biosdisk and changes all device names from
+     * (hdx,x) to (atax,x). To deal with this a function, &quot;update-paths&quot;
+     * was created that updates $prefix_device, $prefix, and $script_prefix
+     * accordingly.
+
+commit ac7e23a2754bdba983e6fde65588132aa186b530
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">jordan at jordan-desktop.</A>(none)&gt;
+Date:   Sat Mar 6 17:34:34 2010 -0800
+
+    Add 'prepare-supergrub-environment.lua' and use $script_prefix from it
+    
+     * To allow for the same image to be used by multiple architectures
+     * grub-mkrescue in grub 1.98 puts modules in different arch specific
+     * directories, like &quot;/boot/grub/i386-pc&quot; while non arch specific files
+     * like scripts stay in &quot;/boot/grub/&quot;. Because of this we can't just do
+     * things like &quot;configfile $prefix/osdetect.lua&quot; any more.
+    
+     * prepare-supergrub-environment.lua sets and exports $script_prefix
+     * which is basically $prefix with the architecture removed. It also
+     * sets $prefix_uuid, $prefix_device, $prefix_path, and $script_path.
+     * These are so that when device names change ( for instance after
+     * inserting ata.mod ) it will be easy to reset $prefix_device using
+     * $prefix_uuid then from there update $prefix and $script_prefix.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/grub.cfg                          |   37 ++++++++++++++++++++++++++++--
+ menus/prepare-supergrub-environment.lua |   36 ++++++++++++++++++++++++++++++
+ 2 files changed, 70 insertions(+), 3 deletions(-)
+ create mode 100644 menus/prepare-supergrub-environment.lua
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000078.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 48496d67ee44f12ef2ae8e5d603b994d32b9aa22
+</A></li>
+	<LI>Next message: <A HREF="000080.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#79">[ date ]</a>
+              <a href="thread.html#79">[ thread ]</a>
+              <a href="subject.html#79">[ subject ]</a>
+              <a href="author.html#79">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

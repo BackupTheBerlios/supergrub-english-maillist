@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] How to build debian packages of grub2 with lua support
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20build%20debian%20packages%20of%20grub2%20with%20lua%20support&In-Reply-To=%3C4B5C205D.2000006%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] How to build debian packages of grub2 with lua support</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20build%20debian%20packages%20of%20grub2%20with%20lua%20support&In-Reply-To=%3C4B5C205D.2000006%40gmail.com%3E"
+       TITLE="[sgd-en] How to build debian packages of grub2 with lua support">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sun Jan 24 11:26:37 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000059.html">[sgd-en] How to build debian packages of grub2 with lua support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jordan Uggla escribi&#243;:
+&gt;<i> Upstream Grub2 moved lua support to grub-extras, and while Debian does
+</I>&gt;<i> include some modules from grub-extras in their grub2 packages, they
+</I>&gt;<i> don't currently include lua. Here are the steps to create grub
+</I>&gt;<i> packages with lua support:
+</I>Hi Jordan,
+
+These are the things you should include (or specify in the source code 
+documentation if they are not included) when doing a release.
+&gt;<i> 
+</I>&gt;<i> Get all the needed dependencies:
+</I>&gt;<i> 
+</I>&gt;<i> # apt-get install bzr fakeroot
+</I>&gt;<i> # apt-get build-dep grub2
+</I>&gt;<i> 
+</I>&gt;<i> Get the source package:
+</I>&gt;<i> 
+</I>&gt;<i> $ cd directory/you/want/to/build/package/in/
+</I>&gt;<i> $ apt-get source grub2
+</I>What's exactly the source grub2 version that you get.
+&gt;<i> 
+</I>&gt;<i> Add lua to the source package:
+</I>&gt;<i> 
+</I>&gt;<i> $ cd grub2-*/
+</I>&gt;<i> $ bzr branch <A HREF="http://bzr.savannah.nongnu.org/r/grub-extras/lua/">http://bzr.savannah.nongnu.org/r/grub-extras/lua/</A>
+</I>&gt;<i> debian/grub-extras/lua/
+</I>What's exactly the bazaar revision that you are getting.
+
+That's it!
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000059.html">[sgd-en] How to build debian packages of grub2 with lua support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

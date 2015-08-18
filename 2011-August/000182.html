@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Boot-Repair in Rescatux
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Boot-Repair%20in%20Rescatux&In-Reply-To=%3C4E3D8433.4050504%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000181.html">
+   <LINK REL="Next"  HREF="000183.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Boot-Repair in Rescatux</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Boot-Repair%20in%20Rescatux&In-Reply-To=%3C4E3D8433.4050504%40gmail.com%3E"
+       TITLE="[sgd-en] Boot-Repair in Rescatux">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Aug  6 20:13:07 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000181.html">[sgd-en] Boot-Repair in Rescatux
+</A></li>
+        <LI>Next message: <A HREF="000183.html">[sgd-en] Boot-Repair in Rescatux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 06/08/11 19:07, <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> escribi&#243;:
+&gt;<i> Hi Adrian, hi all,
+</I>&gt;<i>
+</I>&gt;<i> I nearly finished a new stable version of Boot-Repair.
+</I>&gt;<i> As I promised to Adrian, I made it compatible with Debian, so that it
+</I>&gt;<i> can be used it in Rescatux.
+</I>Great!
+&gt;<i> See: <A HREF="http://pix.toile-libre.org/upload/original/1312649224.png">http://pix.toile-libre.org/upload/original/1312649224.png</A>
+</I>It's nice.
+&gt;<i> Boot-Repair is already translated in 16 languages, and has much more
+</I>&gt;<i> functionalities than Rescapp:
+</I>&gt;<i> - reinstall and update GRUB,
+</I>&gt;<i> - purge GRUB
+</I>&gt;<i> - choice to place GRUB in MBR or partition
+</I>&gt;<i> - restore generic Windows (XP, Vista, Seven) MBR   (current Rescapp does
+</I>&gt;<i> not work with Vista/Seven)
+</I>&gt;<i> - restore original MBR (required when computer has MBR-tatoo)
+</I>&gt;<i> - auto detect separate /boot
+</I>&gt;<i> - detect RAID
+</I>&gt;<i> - compatible Debian, Ubuntu and derivatives
+</I>&gt;<i> - can be used in live-CD, live-USB and installed session
+</I>&gt;<i> - compatible whatever the architectures (32/64bits) of OS detected on the pc
+</I>&gt;<i> - automatically solve several GRUB/Wubi bugs
+</I>&gt;<i> - generate BootInfoScript report (automatically uses the very last
+</I>&gt;<i> script) in 1 clic
+</I>&gt;<i> - repair filesystems (linux AND windows)
+</I>Wow!
+&gt;<i> - a nice and intuitive GUI
+</I>I need to check that.
+&gt;<i> - ...
+</I>&gt;<i> - most important of all : automatic selection of best choices to repair
+</I>&gt;<i> the boot in 1 clic !
+</I>Automatic selection... that's great if the user knows that it is an 
+automatic option.
+&gt;<i>
+</I>&gt;<i> I think this is enough to consider adopting Boot-Repair in Rescatux ;)
+</I>
+Can I have access to source code? I mean which it is the current tar.gz 
+or the current rescatux svn branch? Or the current git snapshot?
+
+Is there a way to install into Rescatux 0.29 live?
+I mean I edit sources.list with the repository you say and then
+I do:
+   apt-get install boot-repair
+and I can run it.
+
+I want to test it!!!
+
+&gt;<i> If you are ok, I need your support for:
+</I>&gt;<i> - translating remaining languages:
+</I>&gt;<i> <A HREF="https://translations.launchpad.net/boot-repair/trunk">https://translations.launchpad.net/boot-repair/trunk</A>
+</I>I'll check it later.
+&gt;<i> - voting the 3 bugs given in the 1st post of this thread:
+</I>&gt;<i> <A HREF="http://ubuntuforums.org/showthread.php?p=10871917#post10871917">http://ubuntuforums.org/showthread.php?p=10871917#post10871917</A>
+</I>I think I have a launchpad account and I will be able to vote that.
+&gt;<i> - do more tests (e.g. with raid and exotic configurations)
+</I>I have had some users that wanted raid support but I have not begun to 
+do raid tests myself.
+&gt;<i> - make it compatible with non-Debian-based distributions
+</I>Humm... We could check that SuSE thing that builds for several 
+distributions.
+&gt;<i> - putting Boot-repair in Debian repositories
+</I>I'll check my notes on how to put that in Debian. First we need a Debian 
+mentor if I remember ok.
+&gt;<i> - suggest improvements
+</I>Of course!
+&gt;<i>
+</I>&gt;<i> Best regards
+</I>&gt;<i> Yann
+</I>
+Actually I had planned to work on boot-repair integration on september 
+2011 but I will gladly take a look at boot-repair right now.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000181.html">[sgd-en] Boot-Repair in Rescatux
+</A></li>
+	<LI>Next message: <A HREF="000183.html">[sgd-en] Boot-Repair in Rescatux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

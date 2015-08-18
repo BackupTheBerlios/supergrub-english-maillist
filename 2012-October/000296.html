@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Rescatux 0.30 is available
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.30%20is%20available&In-Reply-To=%3C5078789A.7080402%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000295.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Rescatux 0.30 is available</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.30%20is%20available&In-Reply-To=%3C5078789A.7080402%40gmail.com%3E"
+       TITLE="[sgd-en] Rescatux 0.30 is available">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Fri Oct 12 22:07:54 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000295.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 5f842d7c485950b846fa72b3643c7fe7865acdae
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#296">[ date ]</a>
+              <a href="thread.html#296">[ thread ]</a>
+              <a href="subject.html#296">[ subject ]</a>
+              <a href="author.html#296">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Rescatux 0.30 is available.
+Check the original piece of news at:
+<A HREF="http://www.supergrubdisk.org/2012/10/12/rescatux-0-30-is-available/">http://www.supergrubdisk.org/2012/10/12/rescatux-0-30-is-available/</A>
+
+---
+
+Rescatux Tour
+
+I made a Rescatux tour which might be interesting to be in the first place.
+
+Each of one of the Rescatux options in this article will have a link to 
+their video so please check them too.
+About Rescatux and Super Grub(2) Disk
+
+Super Grub Disk was a tool for fixing GRUB1 (version 0.9X) or booting 
+into your  system and it&#8217;s deprecated. You can still find its downloads 
+although they are a bit hidden in Super Grub Disk page.
+
+Super Grub2 Disk, contrary to Super Grub Disk, is not able to fix 
+neither GRUB1 (version 0.9X) or GRUB2 (version 1.XX or 2.XX). However 
+you can use it to boot into many systems including Windows, GRUB1 and 
+GRUB2 based ones.
+
+Rescatux is a Debian based live cd that lets you fix your GRUB1 and 
+GRUB2 installations (as per Super Grub2 Disk lacks) but does much more. 
+Here the are some of its features that will be explained in detail in 
+the rest of the article:
+
+     Check and fix filesystems
+     Blank Windows passwords
+     Change Gnu/Linux password
+     Regenerate sudoers file
+
+Finally there&#8217;s the Super Grub Disk&#8217;s Halloween edition which it was not 
+a Super Grub Disk formally but a Super Grub2 Disk with some scary 
+messages about your computer being erased. What it&#8217;s funny is that as 
+today a major Spanish downloads site offers the 0.9800 version for 
+download. If you think it more carefully you will see that it&#8217;s kind of 
+a benevolent trojan so that Super Grub Disk newcomers find that Super 
+Grub2 Disk is the right choice (even if they are scared a bit;)).
+A new stable release
+
+More than a year since the latest Rescatux stable release (Rescatux 0.29 
+at 11 Jul 2011 according to Freecode (former freshmeat).
+
+Rescatux 0.30 has been released as many beta versions that fixed minor 
+problems, updated documentation to the current options and also tried to 
+workaround some usability issues.
+  Helping newbies
+
+The different approach of Rescatux is found in its main program: 
+Rescapp. Rescapp is a nice wizard that will guide you through your 
+rescue tasks.
+
+At the first glance Rescapp seems to be just a launcher for Rescue tools:
+
+. However it has some Support features that make it unique:
+
+     Chat: Open the chat for asking help directly in Rescatux channel.
+     Share log: After running an option you can share its log (the 
+action registry that it has done) so that in the chat they can help you 
+better. O better, even, you can help debug and fix Rescatux bugs on the fly.
+     Share log on forum: Prepares a forum post alike text so that you 
+can just copy and paste it in your favourite forum. Logs are nicely 
+inserted into it with [CODE] symbols.
+     Boot Info Script: Run Boot Info Script option to share your 
+computer configuration (specially boot one).
+
+More than this the non-support features such as:
+
+     Check and fix filesystems
+     Blank Windows passwords
+     Change Gnu/Linux password
+     Regenerate sudoers file
+     Restore Grub
+     Update Grub Configuration
+     Restore Windows MBR (BETA)
+
+are being driven with nice wizards :
+
+.
+  Features explained
+Check and fix filesystems
+
+When a filesystem has some errors in it some bad things might happen. 
+Maybe GRUB1 or GRUB2 cannot find its own files (Grub errors) or the 
+kernels (cannot find file error). Maybe the kernel can be loaded but its 
+initrd stage isn&#8217;t able to find the final device root filesystem (Kernel 
+panic &#8211; not syncing: VFS: Unable to mount root fs. (initramfs))
+
+This option tries to fix this filesystem errors even if the filesystem 
+seems to be clean and ok.
+
+Blank Windows passwords
+
+The old chntpasswd program has been hacked so that you can use it from a 
+GUI. You can just select your Windows drive and the user you want its 
+password to be reset.
+Change Gnu/Linux password
+
+Have you ever forgotten your Gnu/Linux password? Now you can change it 
+from this nice wizard. As always you&#8217;re prompted to choose your 
+Gnu/Linux installation and then the user which you want to change its 
+password.
+Regenerate sudoers file
+
+Have you ever tried to run an special program as a normal user&#8230; but by 
+doing it you have somehow borked your /etc/sudoers file? Don&#8217;t panic! 
+Now after baking up your previous sudoers file a new one is generated on 
+the fly. You just have to select which it&#8217;s your user.
+
+Restore Grub
+
+Not sure what&#8217;s the current situation with Windows 8 and Windows 7 but 
+in previous versions once you reinstalled Windows (because of a virus or 
+whatever reason) you lost your Grub menu. That meant that you couldn&#8217;t 
+boot anymore into your Gnu/Linux system. The truth is that you can 
+download the light-weight Super Grub2 Disk and boot into your system in 
+a temporal way.
+
+But how to fix it permanently? If you&#8217;re not good at the Gnu/Linux 
+command line you can just use Rescatux&#8217;s Restore Grub option.
+Update Grub Configuration
+
+Sometimes the Grub configuration is no longer valid. Either your hard 
+disks order at boot have changed (It should only affect to GRUB1) or you 
+have added a new Windows installation and it&#8217;s not detected.
+
+Update Grub option let&#8217;s you rebuild your Grub configuration files. This 
+option will only work in Debian based distros like Ubuntu.
+Restore Windows MBR (BETA)
+
+This option tries to restore Windows MBR but it&#8217;s kind of buggy because 
+some users report that it&#8217;s not working for them. It probably works with 
+no problem on Windows XP (without dynamic disks) and previous Windows 
+versions. This is the reason why it&#8217;s a BETA option.
+
+Super Grub2 Disk
+
+You shouldn&#8217;t forget that Super Grub2 Disk is also included in Rescatux.
+Architecture detection
+
+Either you have an old 32bit system or a new 64bit system Grub2 
+integrated into Rescatux will detect it and load the corresponding kernel.
+About Rescatux future
+
+There&#8217;s so many things to be enhaced in Rescatux that it&#8217;s hard to 
+categorize them.
+
+      I18N for options (Documentation is already translated)
+     Document Resclib API
+     Open development of new options to new developers
+     Drop zenity menues and focus on pyqt ones
+     Add extra tools like Parted Magic or System Rescue cd programs even 
+if they don&#8217;t have a nice wizard option in Rescapp.
+     Make Rescapp a Debian Package
+     Add loopback.cfg file to Rescatux (and any Debian live cd)
+     Improve option: Restore Grub: Being able to restore 
+non-distribution based GRUB1 installations.
+     Improve option: Update Grub: Being able to use it in non-Debian 
+based systems. Probably using grub-mkconfig from the live cd.
+     Fix known bug: Filesystem Check does not prompt Failure when it fails.
+     Add more translations
+     Partition assistant for new Gnu/Linux installations where you have 
+to shrink Windows partition
+     Try to force the installation of packages when an apt-get upgrade 
+or similar has failed
+     Wipe a filesystem, partition or disk
+     Recover lost files
+     Save your non accesible files from Windows even if you cannot boot 
+into it driven by Rescapp wizard.
+
+Where to Download
+
+Just check the Rescatux Download stable section.
+How to burn it into a cdrom or put it in a USB
+
+Please check the Rescatux wiki for USB instructions. For the cdrom you 
+can just burn it like any other live cd. Imgburn for Windows and Brasero 
+for Gnu/Linux should help you. Make sure you burn it as an image not as 
+a file.
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000295.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 5f842d7c485950b846fa72b3643c7fe7865acdae
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#296">[ date ]</a>
+              <a href="thread.html#296">[ thread ]</a>
+              <a href="subject.html#296">[ subject ]</a>
+              <a href="author.html#296">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

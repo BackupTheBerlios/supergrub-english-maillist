@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%20updated.%20886395367289575b301115d61ca3b22bfa8b1d2f&In-Reply-To=%3CBANLkTinNTG%2BgGFrD-mcv%3Drf4kQcF1bmYYQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000171.html">
+   <LINK REL="Next"  HREF="000173.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f</H1>
+    <B>yannubuntu at gmail.com</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%20updated.%20886395367289575b301115d61ca3b22bfa8b1d2f&In-Reply-To=%3CBANLkTinNTG%2BgGFrD-mcv%3Drf4kQcF1bmYYQ%40mail.gmail.com%3E"
+       TITLE="[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f">yannubuntu at gmail.com
+       </A><BR>
+    <I>Wed Jun 29 04:55:38 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000171.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+        <LI>Next message: <A HREF="000173.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#172">[ date ]</a>
+              <a href="thread.html#172">[ thread ]</a>
+              <a href="subject.html#172">[ subject ]</a>
+              <a href="author.html#172">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>ok. But the /proc/partition gives all partitions (even SWAP and
+extended partitions), so I guess you need a routine to :
+-1- extract the partitions from the /proc/partition file
+-2- remove unwanted partitions from it.
+
+How can I look your code for -2- ? (or can you send the code for -2-
+by email please)
+
+FYI, in boot-repair, I do the same job (-1- and -2-) with blkid output
+(but I don't know if it is more reliable or not than the output of
+/proc/partition ).
+I also use /sys/block/sdX to list disks, and then I use a loop on
+/sdXY to list partitions, for some special commands (e.g. &quot;mount&quot;
+command filters itself which partitions are ok or not.).
+
+Just for information, please can you also give your output of the
+following commands :
+- sudo parted -l
+- sudo blkid
+(this will allow me to know how your card reader is recognized by
+these commands)
+
+Regards
+~Yann
+
+
+2011/6/29 Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">hulselmansgert at gmail.com</A>&gt;:
+&gt;<i> I don't know how to get the necessary info form /sys/block/
+</I>&gt;<i>
+</I>&gt;<i> This is the output on Fedora 15 for:
+</I>&gt;<i>
+</I>&gt;<i> ls /sys/block/
+</I>&gt;<i> loop0 &#160;loop3 &#160;loop6 &#160;ram1 &#160; ram12 &#160;ram15 &#160;ram4 &#160;ram7 &#160;sda &#160;sdd &#160;sr0
+</I>&gt;<i> loop1 &#160;loop4 &#160;loop7 &#160;ram10 &#160;ram13 &#160;ram2 &#160; ram5 &#160;ram8 &#160;sdb &#160;sde
+</I>&gt;<i> loop2 &#160;loop5 &#160;ram0 &#160; ram11 &#160;ram14 &#160;ram3 &#160; ram6 &#160;ram9 &#160;sdc &#160;sdf
+</I>&gt;<i>
+</I>&gt;<i> When using my /proc/partition method:
+</I>&gt;<i> sda sdb sdfsda sdb sdf
+</I>&gt;<i>
+</I>&gt;<i> I have a build-in card reader (sdc sdd sde), which currently doesn't
+</I>&gt;<i> contain any card.
+</I>&gt;<i>
+</I>&gt;<i> If you know how to use /sys/block properly, let me know.
+</I>&gt;<i>
+</I>&gt;<i> - Gert Hulselmans
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 2011/6/29 <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A>&gt;:
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Why not using /sys/block/sdX/ ... ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yann
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2011/6/29 gerth at BerliOS &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15 at users.berlios.de</A>&gt;:
+</I>&gt;&gt;&gt;<i> This is an automated email from the git hooks/post-receive script. It was
+</I>&gt;&gt;&gt;<i> generated because a ref change was pushed to the repository containing
+</I>&gt;&gt;&gt;<i> the project &quot;Project rescatux at BerliOS&quot;.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The branch, master has been updated
+</I>&gt;&gt;&gt;<i> &#160; &#160; &#160; via &#160;886395367289575b301115d61ca3b22bfa8b1d2f (commit)
+</I>&gt;&gt;&gt;<i> &#160; &#160; &#160;from &#160;fae56fe3fae646d320663bafb54e61fe493a8e2a (commit)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Those revisions listed above that are new to this repository have
+</I>&gt;&gt;&gt;<i> not appeared on any other notification email; so we list those
+</I>&gt;&gt;&gt;<i> revisions in full, below.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> - Log -----------------------------------------------------------------
+</I>&gt;&gt;&gt;<i> commit 886395367289575b301115d61ca3b22bfa8b1d2f
+</I>&gt;&gt;&gt;<i> Author: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> Date: &#160; Tue Jun 28 23:52:09 2011 +0200
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; &#160;rescatux_lib: Fix rtux_Get_System_HardDisks function and detect all hard disks.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; &#160;rescatux_lib: Fix rtux_Get_System_HardDisks function and detect all hard disks.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; &#160;Commit 6fa4d88ace3e37d6122668189f9d55289ad3545a broke the hard disk detection
+</I>&gt;&gt;&gt;<i> &#160; &#160;completely.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; &#160;Now the hard disks are directly retrieved from /proc/partitions and all hard
+</I>&gt;&gt;&gt;<i> &#160; &#160;disks, even if they don't contain a partition, are displayed.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; &#160;Signed-off-by: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> -----------------------------------------------------------------------
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Summary of changes:
+</I>&gt;&gt;&gt;<i> &#160;rescatux_lib.sh | &#160; &#160;4 +---
+</I>&gt;&gt;&gt;<i> &#160;1 files changed, 1 insertions(+), 3 deletions(-)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> hooks/post-receive
+</I>&gt;&gt;&gt;<i> --
+</I>&gt;&gt;&gt;<i> Project rescatux at BerliOS
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> Supergrub-english mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Supergrub-english mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Supergrub-english mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000171.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+	<LI>Next message: <A HREF="000173.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#172">[ date ]</a>
+              <a href="thread.html#172">[ thread ]</a>
+              <a href="subject.html#172">[ subject ]</a>
+              <a href="author.html#172">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

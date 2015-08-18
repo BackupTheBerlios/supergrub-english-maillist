@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] SuperGrub2Disk suggestions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SuperGrub2Disk%20suggestions&In-Reply-To=%3Cop.wjgh6ayq72n1ag%40abuela-ae204655%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000291.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] SuperGrub2Disk suggestions</H1>
+    <B>Ricardo Noguerol</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SuperGrub2Disk%20suggestions&In-Reply-To=%3Cop.wjgh6ayq72n1ag%40abuela-ae204655%3E"
+       TITLE="[sgd-en] SuperGrub2Disk suggestions">rickysugarhill at yahoo.es
+       </A><BR>
+    <I>Wed Aug 22 21:09:36 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000291.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 68ff8286f34c63da3e3f2608f20d01c4fbefd126
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#292">[ date ]</a>
+              <a href="thread.html#292">[ thread ]</a>
+              <a href="subject.html#292">[ subject ]</a>
+              <a href="author.html#292">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello
+
+Some time ago I downloaded SG2D 1.99 ISO and had some problems.
+Then found the source and built a modified ISO.
+I think the additions can be useful for others, so I decided to send this.
+Then I saw current version is 2.00s1~beta1, and only found ISO, not source.
+(Changes only tested in version 1.99, but think will work OK in  
+2.00s1~beta1)
+
+I include in ZIP attachment the modified files:
+-osdetect.cfg - unchanged from 1.99 to 2.00s1~beta1 -&gt; no problem
+-main_template.cfg - changed, so I copied my changes to new main.cfg
+-supergrub-mkrescue - have only 1.99 version
+
+The changes are marked with &quot;#ADDED&quot;, and an explanation follows.
+
+---- ABOUT RESCATUX  0.30b6  
+-------------------------------------------------------
+rescatux_cdrom_usb_hybrid_i386_486-amd64_0.30b6_sg2d.iso
+
+With not english keyboard, writing text produces mismatched characters for  
+)(=? ...
+Solution:
+shell -&gt; setxkbmap es   (es for spanish keyboard)
+
+---- ABOUT SuperGrub2Disk  2.00s1~beta1  
+------------------------------------------
+super_grub2_disk_hybrid_2.00s1~beta1.iso
+
+PROBLEMS
+
+-Same keyboard problem when trying to write in command-line mode
+  Solution:
+     insmod keylayouts
+     keymap /boot/grub/keyboard.gkb
+     terminal_input at_keyboard
+
+    gkb file generated with (es for spanish keyboard):
+     ckbcomp es |grub-mklayout -v -o /boot/grub/layout/es.gkb
+
+-In my case image problem with gfxterm ( corrupted.jpg in ZIP)
+   Weird: moving up/down through menus, image toggles between ok and  
+corrupted.
+   OK disabling gfxterm with SHIFT at boot.
+
+-language.cfg  line 90
+   Is          set str_detect_any_grub2_ins=&quot;Detect cualquier...
+   Should be   set str_detect_any_grub2_ins=&quot;Detecta cualquier...
+
+-osdetect.cfg
+   - probe produces several frightening &quot;error: unrecognised fs&quot; messages
+     with empty floppy drive, extended partitions, swap partition...
+     The user could think this means corrupted partitions &gt;&gt; format and  
+reinstall
+     -&gt; Warning about this messages being normal would be good.
+
+   - Trying it with an old Fedora Core 1 installation, boot fails silently.
+     Two and a half problems:
+      -Needs linux16 and initrd16 instead of linux and initrd boot commands
+       (With linux16 and initrd16, booting leads to a kernel panic)
+      -Problem is UUID root parameter, not supported in this old kernel
+       (With /dev/hda1 root spec problem solved)
+      -But CD drives dont work (needs extra kernel parameters &quot;hdb=ide-scsi  
+hdd=ide-scsi&quot;)
+     I suggest:
+       -Tell the user that boot failure sometimes does not mean a damaged  
+operating system,
+        but default boot commands incompatible with some kernels(old ones,  
+I suppose).
+       -Add a new menu option &quot;Linux $file (interactive)&quot; allowing:
+          -Use of linux16 initrd16  or  linux initrd
+          -Use of old root spec /dev/hd...
+           (and show /etc/fstab, if found, as a hint)
+       -Add extra kernel parameters
+
+IMPROVEMENTS?
+
+-Building from source, I include in the ISO personal.cfg, a copy of my  
+systems grub.cfg
+  and a new menu entry in main.cfg &quot;Load embedded grub.cfg&quot; for using it.
+  (useful if hard disk's grub.cfg damaged)
+  But dangerous? if used in other system or outdated
+
+-New menu entry in main.cfg: &quot;Grub commands help&quot;
+   In grub's command-line mode, help is poor, and man or info not available.
+   This displays contents of EASY_HELP file (homemade)
+   Caveat: based on Lubuntu 12.04 included grub2, different version I think.
+
+   Idea(not done): make &quot;info grub&quot; contents available:
+   -Take a copy of the info file
+   -Strip off sections not useful for grub's command-line
+   -Split in several parts and build a menu, or a menu tree, for display  
+them.
+
+
+Ricardo Noguerales Bindhammer
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ZIP.zip
+Type: application/zip
+Size: 88060 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/supergrub-english/attachments/20120822/0b658c12/attachment-0001.zip">https://lists.berlios.de/pipermail/supergrub-english/attachments/20120822/0b658c12/attachment-0001.zip</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000291.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 68ff8286f34c63da3e3f2608f20d01c4fbefd126
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#292">[ date ]</a>
+              <a href="thread.html#292">[ thread ]</a>
+              <a href="subject.html#292">[ subject ]</a>
+              <a href="author.html#292">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

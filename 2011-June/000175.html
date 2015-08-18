@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Resclib first draft
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Resclib%20first%20draft&In-Reply-To=%3C4E0B8B47.3070600%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000174.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Resclib first draft</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Resclib%20first%20draft&In-Reply-To=%3C4E0B8B47.3070600%40gmail.com%3E"
+       TITLE="[sgd-en] Resclib first draft">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Wed Jun 29 22:29:59 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000174.html">[sgd-en] Finding devices on /sys/
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am going to write a draft about Resclib.
+
+Resclib description:
+   It is a library geared towards (Gnu/Linux rescue).
+
+Development:
+    Although it might have more language hooks initially it will 
+programmed with bash scripting.
+
+boot-repair and resclib:
+    resclib is going to be a package (initally Debian and Ubuntu ones) 
+so boot-repair will have to depend on resclib package.
+
+Rescatux and resclib (1st age):
+    Most of the rescatux_lib.sh will be dropped into resclib.sh (or 
+whatever name). So that rescatux_lib.sh sources resclib.sh and define 
+some global functions that are specific to Rescatux.
+
+Rescatux and resclib (2nd age):
+    Rescapp will become a package and thus it will depend on resclib 
+package.
+
+BIS and resclib:
+     Boot Info Script will also use resclib but due the special nature 
+of it the resultant script will be one.
+
+     This command reflects better what I mean:
+     cat resclib.sh bisdo.sh &gt; bis.sh
+
+   BIS developers will only have to take care about bisdo.sh and the BIS 
+users will only see bis.sh
+
+System Rescue CD and resclib:
+     Either in the form of a plain library, rescapp, boot-repair or in 
+the form of a package they will be able to use it.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000174.html">[sgd-en] Finding devices on /sys/
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

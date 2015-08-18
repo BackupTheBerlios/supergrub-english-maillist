@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] install-mbr
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20install-mbr&In-Reply-To=%3C4DFCBE26.9090307%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000153.html">
+   <LINK REL="Next"  HREF="000158.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] install-mbr</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20install-mbr&In-Reply-To=%3C4DFCBE26.9090307%40gmail.com%3E"
+       TITLE="[sgd-en] install-mbr">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Jun 18 17:03:02 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000153.html">[sgd-en] install-mbr
+</A></li>
+        <LI>Next message: <A HREF="000158.html">[sgd-en] install-mbr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#155">[ date ]</a>
+              <a href="thread.html#155">[ thread ]</a>
+              <a href="subject.html#155">[ subject ]</a>
+              <a href="author.html#155">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 18/06/11 16:43, <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> escribi&#243;:
+&gt;<i> Hi again,
+</I>&gt;<i>
+</I>&gt;<i> Concerning the install-mbr command , I see you use :
+</I>&gt;<i> install-mbr ${OTHER_HARD_DISK_PARAMETRE} -e
+</I>&gt;<i> ${SELECTED_PARTITION_NUMBER} /dev/${SELECTED_HARD_DISK}
+</I>&gt;<i>
+</I>&gt;<i> I understand the following :
+</I>&gt;<i> - this reinstalls a generic MBR on /dev/${SELECTED_HARD_DISK}
+</I>&gt;<i> (selected previously by the user)
+</I>That's right.
+&gt;<i> - and forces to boot on the partitions SELECTED_PARTITION_NUMBER
+</I>&gt;<i> (selected previously by the user)
+</I>That's right.
+&gt;<i>
+</I>&gt;<i> 1)  does this work if the selected partition is not active (active flag) ?
+</I>I have not tested it. I think it should because it is a mbr boot code 
+designed to boot. I mean install-mbr does not install the default msdos 
+boot code that relies on active partition.
+&gt;<i> 2) I don't understand the ${OTHER_HARD_DISK_PARAMETRE} , what is it
+</I>&gt;<i> for ? is it mandatory ?
+</I>If you want to boot Windows from a second hard disk you need to specify 
+what it is the bios order for this hard disk.
+
+That other hard disk parametre is only used if the windows disk is not 
+the first one.
+
+You can find the interesting code at:
+
+winmbr/run
+
+I have not tested myself what happens when trying to boot a windows from 
+a second hard disk.
+
+This command should be tested with Windows being on a second hard disk 
+to check log if the commands are the ones supposed to be. I have some 
+doubts right now. You know, I think I did everything ok but I might have 
+been wrong.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000153.html">[sgd-en] install-mbr
+</A></li>
+	<LI>Next message: <A HREF="000158.html">[sgd-en] install-mbr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#155">[ date ]</a>
+              <a href="thread.html#155">[ thread ]</a>
+              <a href="subject.html#155">[ subject ]</a>
+              <a href="author.html#155">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

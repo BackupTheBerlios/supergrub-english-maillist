@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Release Announcement, Super GRUB2 Disk 1.98s1
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Release%20Announcement%2C%20Super%20GRUB2%20Disk%201.98s1&In-Reply-To=%3CAANLkTik2nyIdsb0NI5J28i3Nz1I_c0cQ5ymWcUDidO6m%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000100.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Release Announcement, Super GRUB2 Disk 1.98s1</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Release%20Announcement%2C%20Super%20GRUB2%20Disk%201.98s1&In-Reply-To=%3CAANLkTik2nyIdsb0NI5J28i3Nz1I_c0cQ5ymWcUDidO6m%40mail.gmail.com%3E"
+       TITLE="[sgd-en] Release Announcement, Super GRUB2 Disk 1.98s1">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Wed May 19 08:46:47 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000100.html">[sgd-en] [Git]Project supergrub at BerliOS tag, 1.98s1,	created. c85e82217766d18e19eb4bb666b5b07b6d0be199
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm happy to announce a new release of Super GRUB2 Disk, 1.98s1.
+
+New features in this release:
+
+  * Updated for the latest stable GRUB release, 1.98.
+
+  * Single &quot;hybrid&quot; image can be used to make a bootable CD, floppy, or USB
+    drive.
+
+  * Option to find and load loop bootable iso files.
+    Currently supported distributions:
+      Grml, Parted Magic, Sidux, Slax Tinycore, Ubuntu,
+      and any distribution that ships with a loopback.cfg
+      ( <A HREF="http://www.supergrubdisk.org/wiki/Loopback.cfg">http://www.supergrubdisk.org/wiki/Loopback.cfg</A> ).
+
+  * Option to enable GRUB2's native PATA drivers to work around BIOS bugs/
+    limitations.
+
+  * Option to enable GRUB2's native USB drivers (experimental).
+
+  * Option to list information about devices/partitions.
+
+  * Enabling serial terminal no longer disables console input/output.
+
+  * Better error handling/reporting.
+
+  * Miscellaneous bug fixes.
+
+Steps to build Super GRUB2 Disk 1.98s1 yourself:
+
+bzr branch <A HREF="http://bzr.savannah.gnu.org/r/grub/branches/release_1_98/">http://bzr.savannah.gnu.org/r/grub/branches/release_1_98/</A>
+cd release_1_98/
+mkdir grub-extras
+cd grub-extras
+bzr checkout -r 1.98 <A HREF="http://bzr.savannah.gnu.org/r/grub-extras/915resolution/">http://bzr.savannah.gnu.org/r/grub-extras/915resolution/</A>
+bzr checkout -r 1.98 <A HREF="http://bzr.savannah.gnu.org/r/grub-extras/lua/">http://bzr.savannah.gnu.org/r/grub-extras/lua/</A>
+bzr checkout -r 1.98 <A HREF="http://bzr.savannah.gnu.org/r/grub-extras/zfs/">http://bzr.savannah.gnu.org/r/grub-extras/zfs/</A>
+
+# Simple bugfix patch to lua, off_by_one.patch is attatched
+cd lua
+patch &lt; /tmp/off_by_one.patch
+
+cd ../..
+export GRUB_CONTRIB=grub-extras
+./autogen.sh
+./configure
+sudo GRUB_CONTRIB=grub-extras make install
+cd ..
+
+# Grab super GRUB2 source from git or tar.gz
+cd supergrub
+./supergrub-mkrescue
+
+-- 
+Jordan Uggla (Jordan_U on irc.freenode.net)
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: off_by_one.patch
+Type: text/x-patch
+Size: 336 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/supergrub-english/attachments/20100518/0643d12d/attachment.bin">https://lists.berlios.de/pipermail/supergrub-english/attachments/20100518/0643d12d/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000100.html">[sgd-en] [Git]Project supergrub at BerliOS tag, 1.98s1,	created. c85e82217766d18e19eb4bb666b5b07b6d0be199
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

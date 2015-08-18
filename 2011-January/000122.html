@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Comment on SDGWiki page SGD Howto make
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Comment%20on%20SDGWiki%20page%20SGD%20Howto%20make&In-Reply-To=%3C8DD224B2F74C4AFD8C69ECB2143BC775%40LENO%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000121.html">
+   <LINK REL="Next"  HREF="000123.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Comment on SDGWiki page SGD Howto make</H1>
+    <B>Robert Matovinovic</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Comment%20on%20SDGWiki%20page%20SGD%20Howto%20make&In-Reply-To=%3C8DD224B2F74C4AFD8C69ECB2143BC775%40LENO%3E"
+       TITLE="[sgd-en] Comment on SDGWiki page SGD Howto make">robert.matovinovic at web.de
+       </A><BR>
+    <I>Tue Jan  4 16:08:11 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000121.html">[sgd-en] Rescatux stabilisation roadmap
+</A></li>
+        <LI>Next message: <A HREF="000123.html">[sgd-en] Comment on SDGWiki page SGD Howto make
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, there is 2 times the following sentence in the docs:
+
+&quot;3. Select Umount. Do not select Safe Extraction!!!&quot;
+
+My suggestions for the docs:
+If the sentence above is correct for some systems then:
+
+&quot;3. Select Umount. Do not select Safe Extraction!!! If you get error
+messages with the grub commands below, leave the pendrive mounted (works for
+Ubuntu 10.10)&quot;
+
+If the sentence above is not correct anymore just delete it and 
+&quot;1. Find your pendrive icon in your Desktop. 
+ 2. Right-click on it&quot;
+too.
+
+After the grub commands insert
+
+   1. Find your pendrive icon in your Desktop.
+   2. Right-click on it
+   3. Select Umount.
+
+before &quot;You can now unplug your pendrive. !&quot;
+
+Any idea concerning the usbshift behaviour I mentioned?
+
+Robert
+
+-----Urspr&#252;ngliche Nachricht-----
+Von: <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">supergrub-english-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">supergrub-english-bounces at lists.berlios.de</A>] Im Auftrag von adrian15
+Gesendet: Freitag, 31. Dezember 2010 17:02
+An: <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">supergrub-english at lists.berlios.de</A>
+Betreff: Re: [sgd-en] Comment on SDGWiki page SGD Howto make
+
+
+Could you explain how would you update the wiki page so that it is 
+better? Thank you very much!
+
+El 30/12/10 23:49, Robert Matovinovic escribi&#243;:
+&gt;<i> Hi there,
+</I>&gt;<i> I'm a new user of SDG and it finally helped to fix the boot problem of 
+</I>&gt;<i> my wifes netbook. Thank you for your very helpful work. Because it 
+</I>&gt;<i> took me some hours to get the USB-Stick ready to run I want to share 
+</I>&gt;<i> my experience in doing so for improving the docs. I'm very familiar 
+</I>&gt;<i> with Windows and starting to get more and more into Linux, but still 
+</I>&gt;<i> in the beginnings.
+</I>&gt;<i>
+</I>&gt;<i> My first try to get SDG onto the USB-Stick was under Windows. I 
+</I>&gt;<i> downloaded UNetbootin and the latest super_grub_disk_0.9799.iso. The 
+</I>&gt;<i> stick was booted but only brought up a UNetBootin menu which didn't 
+</I>&gt;<i> work and confused me a bit. I tried to find how to get through to SDG 
+</I>&gt;<i> but didn't succeed. I couldn't find anything useful on their website 
+</I>&gt;<i> about it. So I decided to give a newly installed Ubuntu 10.10 on my 
+</I>&gt;<i> notebook a try: I followed the SGD Howto make page but when I used 
+</I>&gt;<i> grub commands I only got error messages. Needless to say the stick 
+</I>&gt;<i> didn't work. I'm not too familiar with the mounting concept so I 
+</I>&gt;<i> thought especially for the step before the grub stuff - unmount, but 
+</I>&gt;<i> not safe extract the stick - couldn't be wrong. But after some hours 
+</I>&gt;<i> which I would like to have spent different I found that the stick must 
+</I>&gt;<i> be mounted! So at least for me this one line in the docs is not 
+</I>&gt;<i> working. After I let the stick mounted it worked fine. So I assume the 
+</I>&gt;<i> docs should be revised here.
+</I>&gt;<i>
+</I>&gt;<i> When the SDG menu finally appeared on the screen usbshift aborted with 
+</I>&gt;<i> Error 12 : Invalid device requested. The only way to get SDG started 
+</I>&gt;<i> was to delete usbshift in all the commands needed - not the most 
+</I>&gt;<i> convenient way. Did I something wrong, that usbshift didn't work?
+</I>&gt;<i>
+</I>&gt;<i> So far my experience. Again, thank you.
+</I>&gt;<i>
+</I>&gt;<i> Robert
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Supergrub-english mailing list <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;<i>
+</I>
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+_______________________________________________
+Supergrub-english mailing list <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000121.html">[sgd-en] Rescatux stabilisation roadmap
+</A></li>
+	<LI>Next message: <A HREF="000123.html">[sgd-en] Comment on SDGWiki page SGD Howto make
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

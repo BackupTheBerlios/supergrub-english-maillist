@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch,	baells_experimental,	updated. 56d0d93e0c902b06c25365365a37a90d79ad1046
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%0A%09baells_experimental%2C%0A%09updated.%2056d0d93e0c902b06c25365365a37a90d79ad1046&In-Reply-To=%3C200910200601.n9K61ZxJ014645%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000050.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch,	baells_experimental,	updated. 56d0d93e0c902b06c25365365a37a90d79ad1046</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%0A%09baells_experimental%2C%0A%09updated.%2056d0d93e0c902b06c25365365a37a90d79ad1046&In-Reply-To=%3C200910200601.n9K61ZxJ014645%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch,	baells_experimental,	updated. 56d0d93e0c902b06c25365365a37a90d79ad1046">noreply at berlios.de
+       </A><BR>
+    <I>Tue Oct 20 08:01:35 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000050.html">[sgd-en] [Git]Project supergrub at BerliOS branch,	baells_experimental,	updated. f7bdf15e0b2d215ca2b730143ac292b8ba1f51e7
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#51">[ date ]</a>
+              <a href="thread.html#51">[ thread ]</a>
+              <a href="subject.html#51">[ subject ]</a>
+              <a href="author.html#51">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells_experimental has been updated
+       via  56d0d93e0c902b06c25365365a37a90d79ad1046 (commit)
+       via  ffab125b795e25c193aceedcadbdb11f06249aa5 (commit)
+      from  f7bdf15e0b2d215ca2b730143ac292b8ba1f51e7 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 56d0d93e0c902b06c25365365a37a90d79ad1046
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Oct 19 20:44:40 2009 -0700
+
+    Add option to find and load a legacy menu.lst
+    
+     * legacy-menu-parser.lua ( already commited ) does all of the actual
+     * parsing and generates a menu from a menu.lst file.
+    
+     * menu.lstdetect.lua finds menu.lst files and generates the menu with
+     * options to choose which to load.
+    
+     * load-legacy-menu.lua is a hack around the fact that the only way to
+     * creat a new menu is to use &quot;configfile&quot;
+    
+     * source-hack.sh is a hack around the fact that you can't source a
+     * script from lua, so it sources all of the dependencies menu.lstdetect
+     * needs before sourcing menu.lstdetect itself.
+
+commit ffab125b795e25c193aceedcadbdb11f06249aa5
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Oct 19 19:44:40 2009 -0700
+
+    Remove parentheses before setting root
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/grub.cfg               |   11 +++++++++
+ menus/legacy-menu-parser.lua |    2 +-
+ menus/load-legacy-menu.lua   |    6 +++++
+ menus/menu.lstdetect.lua     |   47 ++++++++++++++++++++++++++++++++++++++++++
+ menus/source-hack.sh         |    8 +++++++
+ 5 files changed, 73 insertions(+), 1 deletions(-)
+ create mode 100644 menus/load-legacy-menu.lua
+ create mode 100644 menus/menu.lstdetect.lua
+ create mode 100644 menus/source-hack.sh
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000050.html">[sgd-en] [Git]Project supergrub at BerliOS branch,	baells_experimental,	updated. f7bdf15e0b2d215ca2b730143ac292b8ba1f51e7
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#51">[ date ]</a>
+              <a href="thread.html#51">[ thread ]</a>
+              <a href="subject.html#51">[ subject ]</a>
+              <a href="author.html#51">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

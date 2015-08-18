@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] install-mbr
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20install-mbr&In-Reply-To=%3C4DFCD359.30203%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000157.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] install-mbr</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20install-mbr&In-Reply-To=%3C4DFCD359.30203%40gmail.com%3E"
+       TITLE="[sgd-en] install-mbr">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Jun 18 18:33:29 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[sgd-en] install-mbr
+</A></li>
+        <LI>Next message: <A HREF="000157.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 7646b3c6e1c231ac9114c2f0d1d39c246023039e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 18/06/11 17:53, <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> escribi&#243;:
+&gt;&gt;&gt;<i> 1)  does this work if the selected partition is not active (active flag) ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have not tested it. I think it should because it is a mbr boot code
+</I>&gt;&gt;<i> designed to boot. I mean install-mbr does not install the default msdos boot
+</I>&gt;&gt;<i> code that relies on active partition.
+</I>&gt;<i>
+</I>&gt;<i> ok. It should be worth checking it. If it does not work, we can change
+</I>&gt;<i> the flag via parted.
+</I>That's fine. I do not know how to use parted in an automated way yet.
+&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 2) I don't understand the ${OTHER_HARD_DISK_PARAMETRE} , what is it
+</I>&gt;&gt;&gt;<i> for ? is it mandatory ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If you want to boot Windows from a second hard disk you need to specify what
+</I>&gt;&gt;<i> it is the bios order for this hard disk.
+</I>&gt;<i>
+</I>&gt;<i> You mean that is for example when BIOS boots on sda but Windows is on
+</I>&gt;<i> sdb, we use install-mbr on sda's MBR and tell him to redirect to sdb ?
+</I>&gt;<i> That means the install-mbr -d option is able to read what disk order
+</I>&gt;<i> is inside the BIOS ? wow !
+</I>Yes, it is for that purpose. But the BIOS disk order is given by the 
+user thanks to zenity.
+&gt;<i>
+</I>&gt;<i> Now 1am. See u !
+</I>Ok. XD.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[sgd-en] install-mbr
+</A></li>
+	<LI>Next message: <A HREF="000157.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 7646b3c6e1c231ac9114c2f0d1d39c246023039e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

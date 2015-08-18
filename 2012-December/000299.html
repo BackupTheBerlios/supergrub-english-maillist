@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Merge request: Add Finnix ISO loopback support
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Merge%20request%3A%20Add%20Finnix%20ISO%20loopback%20support&In-Reply-To=%3CCAPx9YqbuVLgfrGoD%2B%2BcSX_PdRP5WwWgERNd6YJk3EXW_w8abaA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Merge request: Add Finnix ISO loopback support</H1>
+    <B>Ryan Finnie</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Merge%20request%3A%20Add%20Finnix%20ISO%20loopback%20support&In-Reply-To=%3CCAPx9YqbuVLgfrGoD%2B%2BcSX_PdRP5WwWgERNd6YJk3EXW_w8abaA%40mail.gmail.com%3E"
+       TITLE="[sgd-en] Merge request: Add Finnix ISO loopback support">ryan at finnie.org
+       </A><BR>
+    <I>Wed Dec 26 04:26:33 CET 2012</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#299">[ date ]</a>
+              <a href="thread.html#299">[ thread ]</a>
+              <a href="subject.html#299">[ subject ]</a>
+              <a href="author.html#299">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="git://github.com/rfinnie/supergrub.git">git://github.com/rfinnie/supergrub.git</A>
+<A HREF="https://github.com/rfinnie/supergrub">https://github.com/rfinnie/supergrub</A>
+
+commit a2428b8b01194d1bfad803beb9bac72b1790e74d
+Author: Ryan Finnie &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">ryan at finnie.org</A>&gt;
+Date:   Tue Dec 25 14:23:49 2012 -0800
+
+    Add Finnix ISO loopback support
+
+    Finnix 107 includes findiso= support.  This change searches for Finnix,
+    and will build the following menu items, depending on what is present:
+
+      * 32-bit userland, 64-bit kernel (/boot/x86/linux64)
+      * 32-bit userland, 32-bit kernel (/boot/x86/linux)
+      * 64-bit userland, 64-bit kernel (/boot/amd64/linux)
+
+    Note that the last option for Finnix 64-bit userland, which is not
+    distributed directly by Finnix, but may be built manually by users.
+
+Thank you!
+RF
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#299">[ date ]</a>
+              <a href="thread.html#299">[ thread ]</a>
+              <a href="subject.html#299">[ subject ]</a>
+              <a href="author.html#299">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

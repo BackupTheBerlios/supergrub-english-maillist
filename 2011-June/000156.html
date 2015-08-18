@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] fsck
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20fsck&In-Reply-To=%3C4DFCC172.1040303%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000154.html">
+   <LINK REL="Next"  HREF="000153.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] fsck</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20fsck&In-Reply-To=%3C4DFCC172.1040303%40gmail.com%3E"
+       TITLE="[sgd-en] fsck">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Jun 18 17:17:06 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000154.html">[sgd-en] fsck
+</A></li>
+        <LI>Next message: <A HREF="000153.html">[sgd-en] install-mbr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 18/06/11 16:58, <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> escribi&#243;:
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> Do you check the partition is unmounted before performing the fsck ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> No.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This is one of the main differences between boot-repair and Rescatux. I
+</I>&gt;&gt;<i> presume that the user is dumb. I presume that I am running from Rescatux
+</I>&gt;&gt;<i> live cd where automouting is not enabled.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So... there is no check about partition being checked because it is not
+</I>&gt;&gt;<i> need. As long as I think Rescapp will become a Debian package there should
+</I>&gt;&gt;<i> be such a check or a warning.
+</I>&gt;<i>
+</I>&gt;<i> ok. I think you should do the check anyway because some other Rescapp
+</I>&gt;<i> function actually mount partitions, so if the user uses such other
+</I>&gt;<i> Rescapp function before the fsck one there is a risk...
+</I>All the Rescapp options are designed in such a way that when they mount 
+a partition they umount them after that.
+
+But you might be right.
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> And where is the function concerning fsck ? (can't find it in
+</I>&gt;&gt;&gt;<i> rescatux_lib nor other run files).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> In the run script inside fsck folder.
+</I>&gt;<i>
+</I>&gt;<i> No such folder in the last source (
+</I>&gt;<i> <A HREF="http://prdownload.berlios.de/rescatux/rescatux_source_code_0.27.tar.gz">http://prdownload.berlios.de/rescatux/rescatux_source_code_0.27.tar.gz</A>
+</I>&gt;<i> )...
+</I>&gt;<i> did I miss something ?
+</I>No. It is a bug. The make source script was missing them. I have just 
+fixed it.
+
+I want to generate source code tar.gz from git repository in the future. 
+I think it is something about pristine. But I do not know how to do that 
+right now.
+
+Source code you should check instead:
+<A HREF="http://developer.berlios.de/git/?group_id=11211">http://developer.berlios.de/git/?group_id=11211</A>
+
+&gt;<i> Other remark about fsck (which is more a bug report) :
+</I>&gt;<i> via Rescatux I checked a NTFS partition, it showed a &quot;success&quot; pop-up,
+</I>&gt;<i> but when I check the log it indeed did not check it. Here is the log :
+</I>&gt;<i>
+</I>&gt;<i> fsck: fsck.ntfs: not found
+</I>&gt;<i> fsck: Error 2 while executing fsck.ntfs for /dev/sda6
+</I>I see.
+Do you think that Rescatux should be able to check ntfs partitions ?
+Does it solve anything fscking ntfs partitions ?
+Is it safe to fsck ntfs partitions from Linux?
+
+&gt;<i> e2fsck 1.41.12 (17-May-2010)
+</I>&gt;<i> fsck.ext2: Illegal seek while trying to open /dev/stdout
+</I>That /dev/stdout is wrong.
+&gt;<i> + EXIT_VALUE=0
+</I>Humm... It is a pain to work with tee, zenity and so on. I do not know 
+how to fix that. I will check it later.
+
+&gt;<i> + return 0
+</I>&gt;<i> + rtux_Message_Success Filesystem check with automatic fix was 'OK!' ':)'
+</I>I upload these fixes to git.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000154.html">[sgd-en] fsck
+</A></li>
+	<LI>Next message: <A HREF="000153.html">[sgd-en] install-mbr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. v0.31b3-12-ge05074f
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%20v0.31b3-12-ge05074f&In-Reply-To=%3C20130812124402.ACBA055B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000329.html">
+   <LINK REL="Next"  HREF="000331.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. v0.31b3-12-ge05074f</H1>
+    <B>adrian15 at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%20v0.31b3-12-ge05074f&In-Reply-To=%3C20130812124402.ACBA055B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. v0.31b3-12-ge05074f">adrian15 at users.berlios.de
+       </A><BR>
+    <I>Mon Aug 12 14:44:02 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000329.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. dc8b8a6ecefa6041403289df9ea15cfd2e54d529
+</A></li>
+        <LI>Next message: <A HREF="000331.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7a2bbfd6c2cfc27318e3880fec800c87a9310d82
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#330">[ date ]</a>
+              <a href="thread.html#330">[ thread ]</a>
+              <a href="subject.html#330">[ subject ]</a>
+              <a href="author.html#330">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project rescatux at BerliOS&quot;.
+
+The branch, master has been updated
+       via  e05074f7777ead47ded3008d000823e49dbc6508 (commit)
+       via  85f7f875d4af17a24c7080771e0d0cb0bd8cb675 (commit)
+       via  8e7e61547b431b9ac32ebe8e8613510d6c225eaf (commit)
+       via  dd23389658a61dc9c928497f48d3d79dd66fd9ca (commit)
+       via  793f6b9bda3e11f3fbaa7c07666aa4df03359661 (commit)
+       via  e3907766cc2d73332d630cc12e21ae2de23c3796 (commit)
+       via  4203c1f0eedcd4d1d979d136cbb177c8dd48d6db (commit)
+       via  102de34ecc70cf78fbd8a39ad6e24ab45af05671 (commit)
+       via  2a91da85836e6d9269921da4e645e37a47dcf0dc (commit)
+       via  bf1a289d26ef0a903ae8ebfeab0d44eb33cbcaee (commit)
+       via  d319cfbe4bde6011f4625a29e5d67308a75cdef5 (commit)
+       via  adf09f4b0054e153481768b0ae7097992189e1cb (commit)
+      from  0627bddb23ec9ca5a0827e8774dd9dfbdc1c9e49 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit e05074f7777ead47ded3008d000823e49dbc6508
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Mon Aug 12 00:40:58 2013 +0200
+
+    Rescatux version is 0.31 beta 4
+    
+    New features:
+    
+    * Better handle of /boot/grub2 in Fedora installations when running grub-install or update-grub options
+    * Update Grub should work in any Grub2 system (previous version only worked on Debian or Ubuntu distributions)
+    * New option: Promote a Windows user to Administrator
+    * XFE is the new file manager instead of qtfm
+    * New option: Unlock a Windows user to re-enable it
+    * LVM and RAID support for Restore Grub and Update Grub options (It seems it already worked from 0.30.2)
+    
+    Known bugs:
+    
+    * Handling of directories with spaces when detecting Windows SAM files is not optimal
+    * Double-clicking on directories on desktop opens Iceweasel (Firefox fork) instead of a file manager
+    * Bottom bar does not have a shorcut to a file manager as it's a common practice in modern desktops
+    
+    Pending features or bugfixes for 0.31 stable release
+    
+    * Select keyboard from Grub2 boot or Isolinux boot so that you can type
+      your correct password when resetting Gnu/Linux password
+    * New option: Easy Grub fix: Runs both Restore Grub and Update Grub options
+    * New option: Easy Windows Admin: Runs:
+    ** Unlock user
+    ** Promote user to admin
+    ** blank admin user password
+    so that you can work straight-forward as a windows admin user.
+    * Rewriting of Windows chntpw based options so that source code is not repeated.
+
+commit 85f7f875d4af17a24c7080771e0d0cb0bd8cb675
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Mon Aug 12 00:21:53 2013 +0200
+
+    Winunlock was fixed to use the right chntpw option so that it actually unlocks the user
+
+commit 8e7e61547b431b9ac32ebe8e8613510d6c225eaf
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 23:40:23 2013 +0200
+
+    Make sure winunlock option is included in Rescatux build
+
+commit dd23389658a61dc9c928497f48d3d79dd66fd9ca
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 23:37:58 2013 +0200
+
+    First version of winunlock option.
+    
+    Winunlock lets you to unlock a Windows system that was disabled
+
+commit 793f6b9bda3e11f3fbaa7c07666aa4df03359661
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 22:51:33 2013 +0200
+
+    At set background script:
+    
+    * pcmanfm is no longer used because it's no longer present in the distribution
+    * XFE to be the default directory application (With current razorqt 0.5.2 it actually doesn't work)
+
+commit e3907766cc2d73332d630cc12e21ae2de23c3796
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 16:20:48 2013 +0200
+
+    qtfm was replaced with xfe which doesn't have a dependence in new libc6 package.
+
+commit 4203c1f0eedcd4d1d979d136cbb177c8dd48d6db
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 12:53:36 2013 +0200
+
+    Siduction pinning was improved so that it works as expected
+
+commit 102de34ecc70cf78fbd8a39ad6e24ab45af05671
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 01:27:55 2013 +0200
+
+    Make sure winpromote option is included in Rescatux build
+
+commit 2a91da85836e6d9269921da4e645e37a47dcf0dc
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sun Aug 11 01:23:22 2013 +0200
+
+    First version of winpromote option.
+    
+    Winpromote lets you to promote a Windows system user from a normal user to be Administrator
+
+commit bf1a289d26ef0a903ae8ebfeab0d44eb33cbcaee
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Aug 10 23:26:04 2013 +0200
+
+    Update Grub option improved so that it uses upstream grub-mkconfig command when no update-grub command is available. It also tries to use grub2-mkconfig which it's the filename for Fedora systems and alike.
+
+commit d319cfbe4bde6011f4625a29e5d67308a75cdef5
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Aug 10 20:48:43 2013 +0200
+
+    Add verbosity when running rtux_file_chroot_script_device_map function script
+
+commit adf09f4b0054e153481768b0ae7097992189e1cb
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Aug 10 20:33:31 2013 +0200
+
+    Better handle of /boot/grub2 in Fedora installations when running grub-install or update-grub options
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ VERSION                                       |  2 +-
+ make_common                                   | 13 ++-----
+ make_rescatux_hybrid.sh                       | 32 ++++++++++++++++-
+ rescatux_lib.sh                               | 13 ++++---
+ setbackground.sh                              | 11 ++++--
+ update-grub/run                               |  9 +++--
+ win.lis                                       |  2 ++
+ winpromote/description                        |  1 +
+ winpromote/directory                          |  1 +
+ winpromote/local_doc.html                     | 50 +++++++++++++++++++++++++++
+ winpromote/name                               |  1 +
+ {about-rescapp =&gt; winpromote}/online_doc.html |  0
+ {winpass =&gt; winpromote}/run                   | 24 ++++++-------
+ {boot-repair =&gt; winpromote}/sudo              |  0
+ winunlock/description                         |  1 +
+ winunlock/directory                           |  1 +
+ winunlock/local_doc.html                      | 50 +++++++++++++++++++++++++++
+ winunlock/name                                |  1 +
+ {about-rescapp =&gt; winunlock}/online_doc.html  |  0
+ {winpass =&gt; winunlock}/run                    | 24 ++++++-------
+ {boot-repair =&gt; winunlock}/sudo               |  0
+ 21 files changed, 189 insertions(+), 47 deletions(-)
+ create mode 100644 winpromote/description
+ create mode 100644 winpromote/directory
+ create mode 100644 winpromote/local_doc.html
+ create mode 100644 winpromote/name
+ copy {about-rescapp =&gt; winpromote}/online_doc.html (100%)
+ copy {winpass =&gt; winpromote}/run (87%)
+ copy {boot-repair =&gt; winpromote}/sudo (100%)
+ create mode 100644 winunlock/description
+ create mode 100644 winunlock/directory
+ create mode 100644 winunlock/local_doc.html
+ create mode 100644 winunlock/name
+ copy {about-rescapp =&gt; winunlock}/online_doc.html (100%)
+ copy {winpass =&gt; winunlock}/run (87%)
+ copy {boot-repair =&gt; winunlock}/sudo (100%)
+
+
+hooks/post-receive
+-- 
+Project rescatux at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000329.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. dc8b8a6ecefa6041403289df9ea15cfd2e54d529
+</A></li>
+	<LI>Next message: <A HREF="000331.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7a2bbfd6c2cfc27318e3880fec800c87a9310d82
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#330">[ date ]</a>
+              <a href="thread.html#330">[ thread ]</a>
+              <a href="subject.html#330">[ subject ]</a>
+              <a href="author.html#330">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20e34258ea1947ce8c372631063c8aa71674b52d59&In-Reply-To=%3C201003220207.o2M27tLP003327%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000079.html">
+   <LINK REL="Next"  HREF="000081.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20e34258ea1947ce8c372631063c8aa71674b52d59&In-Reply-To=%3C201003220207.o2M27tLP003327%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59">noreply at berlios.de
+       </A><BR>
+    <I>Mon Mar 22 03:07:55 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000079.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 264383a99d4c4ab97a7145d57bdd96404ce30622
+</A></li>
+        <LI>Next message: <A HREF="000081.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  e34258ea1947ce8c372631063c8aa71674b52d59 (commit)
+       via  caa5e211acb9f7accb9fd00a0dad987c848641c9 (commit)
+       via  00f185fcb26553cea9a8b6996398e9c32e134f6c (commit)
+       via  67ac17eb220d600de008f02a470d05ac9037ab01 (commit)
+       via  bed67c39684f389b6d8a969375209678333132a8 (commit)
+       via  6e73464375f9138cce02ab8dc1407551a9698685 (commit)
+       via  88d97cadd7fe80ec5f22ff0050e88e33234bfbd0 (commit)
+       via  f21c2997d6722e20105c5ad51e0491921e2290f4 (commit)
+       via  2f0a5545f80cf9e1aaedfa0b0296932415d31ac4 (commit)
+      from  264383a99d4c4ab97a7145d57bdd96404ce30622 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit e34258ea1947ce8c372631063c8aa71674b52d59
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Mar 21 18:05:52 2010 -0700
+
+    Fix typo that broke update-paths()
+
+commit caa5e211acb9f7accb9fd00a0dad987c848641c9
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Mar 21 14:34:55 2010 -0700
+
+    Add option to detect loop bootable isos
+
+commit 00f185fcb26553cea9a8b6996398e9c32e134f6c
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Fri Mar 19 18:24:10 2010 -0700
+
+    Fix bug where isofolder is not found with separate /boot
+    
+     * If users with a separate /boot put their isos in &quot;/boot/isos&quot; it will
+     * show up in grub as (hdx,y)/isos so searching for &quot;/boot/isos&quot; won't
+     * find it. Instead remove &quot;/boot&quot; from default value for isofolder and
+     * always check for both /$isofolder and /boot/$isofolder.
+    
+     * With this change the directory name &quot;isos&quot; is too generic and likely
+     * to accidentally collide so change the default value for $isofolder to
+     * &quot;boot-isos&quot;
+
+commit 67ac17eb220d600de008f02a470d05ac9037ab01
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Fri Mar 19 17:55:23 2010 -0700
+
+    Make isodetect.lua search all devices
+
+commit bed67c39684f389b6d8a969375209678333132a8
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Fri Mar 19 16:36:13 2010 -0700
+
+    Merge listisos.lua and bootiso.lua into isodetect.lua
+
+commit 6e73464375f9138cce02ab8dc1407551a9698685
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Fri Mar 19 00:42:34 2010 -0700
+
+    Look for $lang instead of $isolangcode
+    
+     * This way users using localized grub will automatically get the same
+     * localization from the isos they boot.
+
+commit 88d97cadd7fe80ec5f22ff0050e88e33234bfbd0
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Wed Mar 17 23:42:37 2010 -0700
+
+    Make bootiso.lua create menu entries instead of actually booting
+
+commit f21c2997d6722e20105c5ad51e0491921e2290f4
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sat Mar 13 14:58:58 2010 -0800
+
+    Use iso name for the loop device name instead of &quot;loop0&quot;
+    
+     * Allows multiple isos to be loop mounted at once.
+
+commit 2f0a5545f80cf9e1aaedfa0b0296932415d31ac4
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">jordan at jordan-desktop.</A>(none)&gt;
+Date:   Wed Mar 10 21:26:58 2010 -0800
+
+    Import iso booting script by JustRon
+    
+     * Add listisos.lua and bootiso.lua directly from
+     * <A HREF="http://ubuntuforums.org/showthread.php?t=1288604">http://ubuntuforums.org/showthread.php?t=1288604</A>
+     * The scripts will not work as-is with super grub disk, and no menu
+     * entry is created to use them.
+    
+     * The purpose of this commit is to make it easy to see the changes made
+     * to the scripts from the original.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/grub.cfg      |   19 +++--
+ menus/isodetect.lua |  193 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 205 insertions(+), 7 deletions(-)
+ create mode 100644 menus/isodetect.lua
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000079.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 264383a99d4c4ab97a7145d57bdd96404ce30622
+</A></li>
+	<LI>Next message: <A HREF="000081.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

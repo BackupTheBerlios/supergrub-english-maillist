@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] r8 - baells/menus
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20r8%20-%20baells/menus&In-Reply-To=%3C200908221643.n7MGhgGa026040%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000027.html">
+   <LINK REL="Next"  HREF="000029.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] r8 - baells/menus</H1>
+    <B>adrian15 at mail.berlios.de</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20r8%20-%20baells/menus&In-Reply-To=%3C200908221643.n7MGhgGa026040%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] r8 - baells/menus">adrian15 at mail.berlios.de
+       </A><BR>
+    <I>Sat Aug 22 18:43:42 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000027.html">[sgd-en] r7 - baellsdeb/debian
+</A></li>
+        <LI>Next message: <A HREF="000029.html">[sgd-en] SG2D 1.21 released . Please test it.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Author: adrian15
+Date: 2009-08-22 18:43:10 +0200 (Sat, 22 Aug 2009)
+New Revision: 8
+
+Added:
+   baells/menus/osdetect.lua
+Modified:
+   baells/menus/grub.cfg
+Log:
+Added OS detect script and option
+
+Modified: baells/menus/grub.cfg
+===================================================================
+--- baells/menus/grub.cfg	2009-08-20 18:28:02 UTC (rev 7)
++++ baells/menus/grub.cfg	2009-08-22 16:43:10 UTC (rev 8)
+@@ -47,3 +47,9 @@
+  boot
+ }
+ 
++# Entry 1 - Chainload OS prober lua script
++menuentry &quot;AUTO MAGIC BOOT&quot; {
++ source $prefix/osdetect.lua
++}
++
++
+
+Added: baells/menus/osdetect.lua
+===================================================================
+--- baells/menus/osdetect.lua	2009-08-20 18:28:02 UTC (rev 7)
++++ baells/menus/osdetect.lua	2009-08-22 16:43:10 UTC (rev 8)
+@@ -0,0 +1,198 @@
++#!lua
++--
++-- Copyright (C) 2009  Free Software Foundation, Inc.
++--
++-- GRUB is free software: you can redistribute it and/or modify
++-- it under the terms of the GNU General Public License as published by
++-- the Free Software Foundation, either version 3 of the License, or
++-- (at your option) any later version.
++--
++-- GRUB is distributed in the hope that it will be useful,
++-- but WITHOUT ANY WARRANTY; without even the implied warranty of
++-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++-- GNU General Public License for more details.
++--
++-- You should have received a copy of the GNU General Public License
++-- along with GRUB.  If not, see &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&gt;.
++--
++
++function enum_device (device, fs, uuid)
++  local root
++  local title
++  local source
++  local kernels = {}
++  local kernelnames = {}
++  local kernel_num = 0
++
++  local function enum_file (name)
++    local version
++
++    version = string.match (name, &quot;vmlinuz%-(.*)&quot;)
++    if (version == nil) then
++      version = string.match (name, &quot;linux%-(.*)&quot;)
++    end
++    if (version ~= nil) then
++      table.insert (kernels, version)
++      table.insert (kernelnames, name)
++      kernel_num = kernel_num + 1
++    end
++  end
++
++  local function sort_kernel (first, second)
++    local a1, a2, a3, a4, b1, b2, b3, b4
++
++    a1, a2, a3, a4 = string.match (first, &quot;(%d+)%.?(%d*).?(%d*)%-?(%d*)&quot;)
++    b1, b2, b3, b4 = string.match (second, &quot;(%d+)%.?(%d*).?(%d*)%-?(%d*)&quot;)
++    return (a1 &gt; b1) or (a2 &gt; b2) or (a3 &gt; b3) or (a4 &lt; b4);
++  end
++  local function freebsd_variants (title, header, footer)
++    normal = &quot;\nset FreeBSD.acpi_load=YES&quot; ..
++    &quot;\nset FreeBSD.hint.acpi.0.disabled=0&quot;
++    noacpi = &quot;\nunset FreeBSD.acpi_load&quot; ..
++    &quot;\nset FreeBSD.hint.acpi.0.disabled=1&quot; ..
++    &quot;\nset FreeBSD.loader.acpi_disabled_by_user=1&quot;
++    safe = &quot;\nset FreeBSD.hint.apic.0.disabled=1&quot; ..
++	&quot;\nset FreeBSD.hw.ata.ata_dma=0&quot; ..
++        &quot;\nset FreeBSD.hw.ata.atapi_dma=0&quot; ..
++        &quot;\nset FreeBSD.hw.ata.wc=0&quot; ..
++        &quot;\nset FreeBSD.hw.eisa_slots=0&quot; ..
++        &quot;\nset FreeBSD.hint.kbdmux.0.disabled=1&quot;
++    grub.add_menu (header .. normal .. footer, title)
++    grub.add_menu (header .. &quot; single&quot; .. normal .. footer, 
++		   title .. &quot; (single)&quot;)
++    grub.add_menu (header .. &quot; verbose&quot; .. normal .. footer, 
++		   title .. &quot; (verbose)&quot;)
++    grub.add_menu (header .. noacpi .. footer, 
++		   title .. &quot; (without ACPI)&quot;)
++    grub.add_menu (header .. noacpi .. safe .. footer, 
++		   title .. &quot; (safe mode)&quot;)
++  end
++
++  root = &quot;(&quot; .. device .. &quot;)/&quot;
++  source = &quot;set root=&quot; .. device .. &quot;\nchainloader +1&quot;
++  title = nil
++  if (grub.file_exist (root .. &quot;bootmgr&quot;) and
++      grub.file_exist (root .. &quot;boot/bcd&quot;)) then
++    title = &quot;Windows Vista bootmgr&quot;
++  elseif (grub.file_exist (root .. &quot;ntldr&quot;) and
++	  grub.file_exist (root .. &quot;ntdetect.com&quot;) and
++	  grub.file_exist (root .. &quot;boot.ini&quot;)) then
++    title = &quot;Windows NT/2000/XP loader&quot;
++  elseif (grub.file_exist (root .. &quot;windows/win.com&quot;)) then
++    title = &quot;Windows 98/ME&quot;
++  elseif (grub.file_exist (root .. &quot;io.sys&quot;) and
++	  grub.file_exist (root .. &quot;command.com&quot;)) then
++    title = &quot;MS-DOS&quot;
++  elseif (grub.file_exist (root .. &quot;kernel.sys&quot;)) then
++    title = &quot;FreeDOS&quot;
++  elseif (fs == &quot;ufs&quot; and grub.file_exist (root .. &quot;boot/loader&quot;) and
++	  grub.file_exist (root .. &quot;boot/device.hints&quot;)) then
++     header = &quot;set root=&quot; .. device .. &quot;\nfreebsd /boot/kernel/kernel&quot; 
++     footer = &quot;\nset FreeBSD.vfs.root.mountfrom=ufs:ufsid/&quot; .. uuid ..
++	&quot;\nfreebsd_loadenv /boot/device.hints&quot;
++     title = &quot;FreeBSD (on &quot; .. fs .. &quot; &quot;.. device .. &quot;)&quot;
++     freebsd_variants (title, header, footer)
++     return 0
++  elseif (fs == &quot;zfs&quot; and grub.file_exist (root .. &quot;/@/boot/kernel/kernel&quot;) and
++      grub.file_exist (root .. &quot;/@/boot/device.hints&quot;)) then
++     header = &quot;set root=&quot; .. device .. &quot;\nfreebsd /@/boot/kernel/kernel&quot; 
++     footer =  &quot;\nfreebsd_module_elf /@/boot/kernel/opensolaris.ko&quot; ..
++      &quot;\nfreebsd_module_elf /@/boot/kernel/zfs.ko&quot; ..
++      &quot;\nfreebsd_module /@/boot/zfs/zpool.cache type=/boot/zfs/zpool.cache&quot; ..
++      &quot;\nprobe -l -s name $root&quot; ..
++      &quot;\nset FreeBSD.vfs.root.mountfrom=zfs:$name&quot; ..
++      &quot;\nfreebsd_loadenv /@/boot/device.hints&quot;
++     title = &quot;FreeBSD (on &quot; .. fs .. &quot; &quot;.. device .. &quot;)&quot;
++     freebsd_variants (title, header, footer)
++     return 0
++  elseif (fs == &quot;hfsplus&quot; and grub.file_exist (root .. &quot;mach_kernel&quot;)) then
++    source = &quot;set root=&quot; .. device ..
++        &quot;\ninsmod vbe&quot; ..
++        &quot;\ndo_resume=0&quot; ..
++        &quot;\nif [ /var/vm/sleepimage -nt10 / ]; then&quot; ..
++        &quot;\n  if xnu_resume /var/vm/sleepimage; then&quot; ..
++        &quot;\n     do_resume=1&quot; ..
++        &quot;\n  fi&quot; ..
++        &quot;\nfi&quot; ..
++        &quot;\nif [ $do_resume == 0 ]; then&quot; ..
++        &quot;\n   xnu_uuid &quot;  .. uuid .. &quot; uuid&quot; ..
++        &quot;\n   if [ -f /Extra/DSDT.aml ]; then&quot; ..
++        &quot;\n      acpi -e /Extra/DSDT.aml&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   xnu_kernel /mach_kernel boot-uuid=${uuid} rd=*uuid&quot; ..
++        &quot;\n   if [ /System/Library/Extensions.mkext -nt /System/Library/Extensions ]; then&quot; ..
++        &quot;\n      xnu_mkext /System/Library/Extensions.mkext&quot; ..
++        &quot;\n   else&quot; ..
++        &quot;\n      xnu_kextdir /System/Library/Extensions&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -f /Extra/Extensions.mkext ]; then&quot; ..
++        &quot;\n      xnu_mkext /Extra/Extensions.mkext&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -d /Extra/Extensions ]; then&quot; ..
++        &quot;\n      xnu_kextdir /Extra/Extensions&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -f /Extra/devtree.txt ]; then&quot; ..
++        &quot;\n      xnu_devtree /Extra/devtree.txt&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -f /Extra/splash.jpg ]; then&quot; ..
++        &quot;\n      insmod jpeg&quot; ..
++        &quot;\n      xnu_splash /Extra/splash.jpg&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -f /Extra/splash.png ]; then&quot; ..
++        &quot;\n      insmod png&quot; ..
++        &quot;\n      xnu_splash /Extra/splash.png&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\n   if [ -f /Extra/splash.tga ]; then&quot; ..
++        &quot;\n      insmod tga&quot; ..
++        &quot;\n      xnu_splash /Extra/splash.tga&quot; ..
++        &quot;\n   fi&quot; ..
++        &quot;\nfi&quot;
++    title = &quot;Mac OS X/Darwin&quot;
++  else
++    grub.enum_file (enum_file, root .. &quot;boot&quot;)
++    if kernel_num ~= 0 then
++      table.sort (kernels, sort_kernel)
++      for i = 1, kernel_num do
++	local initrd
++
++	title = &quot;Linux &quot; .. kernels[i]
++	uuid_setup = &quot;search --set=sgd_linux_kernel -f /boot/&quot; .. kernelnames[i] .. &quot;\n&quot;
++	uuid_set = &quot;probe -u ($sgd_linux_kernel) --set=sgd_root_uuid&quot; .. &quot;\n&quot;
++	source = &quot;set root=&quot; .. device ..
++	  &quot;\nlinux /boot/&quot; .. kernelnames[i] ..
++	  &quot; root=UUID=&quot; .. &quot;$sgd_root_uuid&quot; ..  &quot; ro&quot;
++
++	if grub.file_exist (root .. &quot;boot/initrd-&quot; ..
++			    kernels[i] .. &quot;.img&quot;) then
++	  initrd = &quot;\ninitrd /boot/initrd-&quot; .. kernels[i] .. &quot;.img&quot;
++	elseif grub.file_exist (root .. &quot;boot/initrd.img-&quot; .. kernels[i]) then
++	  initrd = &quot;\ninitrd /boot/initrd.img-&quot; .. kernels[i]
++	elseif grub.file_exist (root .. &quot;boot/initrd-&quot; .. kernels[i]) then
++	  initrd = &quot;\ninitrd /boot/initrd-&quot; .. kernels[i]
++	else
++	  initrd = &quot;&quot;
++	end
++
++	grub.add_menu (uuid_setup .. uuid_set .. source .. initrd, title)
++	grub.add_menu (source .. &quot; single&quot; .. initrd,
++		       title .. &quot; (single-user mode)&quot;)
++      end
++      return 0
++    end
++  end
++
++  if title == nil then
++    local partition = string.match (device, &quot;.*,(%d+)&quot;)
++
++    if (partition ~= nil) and (tonumber (partition) &gt; 4) then
++      return 0
++    end
++
++    title = &quot;Other OS&quot;
++  end
++
++  grub.add_menu (source, title)
++  return 0
++end
++
++grub.enum_device (enum_device)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000027.html">[sgd-en] r7 - baellsdeb/debian
+</A></li>
+	<LI>Next message: <A HREF="000029.html">[sgd-en] SG2D 1.21 released . Please test it.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

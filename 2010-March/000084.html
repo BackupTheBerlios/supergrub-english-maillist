@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20e34258ea1947ce8c372631063c8aa71674b52d59&In-Reply-To=%3C9dd6c8711003241330l243686b2n5d77c39a07fc853c%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000083.html">
+   <LINK REL="Next"  HREF="000085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20e34258ea1947ce8c372631063c8aa71674b52d59&In-Reply-To=%3C9dd6c8711003241330l243686b2n5d77c39a07fc853c%40mail.gmail.com%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. e34258ea1947ce8c372631063c8aa71674b52d59">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Wed Mar 24 21:30:37 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000083.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+        <LI>Next message: <A HREF="000085.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Mar 24, 2010 at 12:57 PM, adrian15 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; wrote:
+&gt;<i> Jordan Uggla escribi&#243;:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Wed, Mar 24, 2010 at 11:04 AM, adrian15 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">noreply at berlios.de</A> escribi&#243;:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> &#160; &#160; &#160; &#160;* The purpose of this commit is to make it easy to see the
+</I>&gt;&gt;&gt;&gt;<i> changes
+</I>&gt;&gt;&gt;&gt;<i> made
+</I>&gt;&gt;&gt;&gt;<i> &#160; &#160;* to the scripts from the original.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can you please Jordan_U elaborate on this?
+</I>&gt;&gt;&gt;<i> Can't you just open a new branch and save these files there?
+</I>&gt;&gt;&gt;<i> Or just save the files locally?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I didn't just want an archived copy of the original scripts, but I
+</I>&gt;&gt;<i> wanted it to be easy for others to see what changes I made and why (so
+</I>&gt;&gt;<i> that JustRon can incorporate some or all of them if he wants, and
+</I>&gt;&gt;<i> others can point out a better approach). If you do a diff of JustRon's
+</I>&gt;&gt;<i> bootiso.lua and listiso.lua vs the final isodetect.lua even with git
+</I>&gt;&gt;<i> diff's --find-copies-harder it just shows up as a complete rewrite,
+</I>&gt;&gt;<i> which it is not.
+</I>&gt;<i>
+</I>&gt;<i> Is there any reason why you cannot save JustRon scripts (or your adaptions)
+</I>&gt;<i> in separates files and include them in isodetect.lua?
+</I>
+Loadfile is still not implemented in grub's lua, it can be worked
+around as you can see in baells_experimental but it seems like an ugly
+hack to me (which is the main reason I haven't merged
+baells_experimental into baells yet) and should be fixed in the next
+release of grub (along with some other annoying lua related bugs).
+
+But with loadfile support I would still have had a commit like this
+because I think it's useful to have a record of each of the changes
+made and why they were made rather than one large diff.
+
+&gt;<i>
+</I>&gt;<i> (I mean similar to bash source command or C include command).
+</I>&gt;<i>
+</I>&gt;<i> adrian15
+</I>&gt;<i> --
+</I>&gt;<i> Support free software. Donate to Super Grub Disk. Apoya el software libre.
+</I>&gt;<i> Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Supergrub-english mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;<i>
+</I>
+-- 
+Jordan Uggla (Jordan_U on irc.freenode.net)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000083.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+	<LI>Next message: <A HREF="000085.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells, updated. e34258ea1947ce8c372631063c8aa71674b52d59
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

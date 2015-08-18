@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ Bug #18907 ] isodirs=$1 in scan_isos
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5B%20Bug%20%2318907%20%5D%20isodirs%3D%241%20in%20scan_isos&In-Reply-To=%3C51816C82.20001%40users.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000321.html">
+   <LINK REL="Next"  HREF="000316.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ Bug #18907 ] isodirs=$1 in scan_isos</H1>
+    <B>Niall Walsh</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5B%20Bug%20%2318907%20%5D%20isodirs%3D%241%20in%20scan_isos&In-Reply-To=%3C51816C82.20001%40users.berlios.de%3E"
+       TITLE="[sgd-en] [ Bug #18907 ] isodirs=$1 in scan_isos">niallwalsh at users.berlios.de
+       </A><BR>
+    <I>Wed May  1 21:26:58 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000321.html">[sgd-en] Detect efi bootloaders
+</A></li>
+        <LI>Next message: <A HREF="000316.html">[sgd-en] [ Bug #18907 ] isodirs=$1 in scan_isos
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#311">[ date ]</a>
+              <a href="thread.html#311">[ thread ]</a>
+              <a href="subject.html#311">[ subject ]</a>
+              <a href="author.html#311">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Many ways to solve this.
+
+I haven't tested the solution suggested in the bug:
+
+isodirs=$*
+
+But you certainly can do:
+
+scan_isos &quot;/boot-isos /boot/boot-isos&quot;
+
+Niall
+
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000321.html">[sgd-en] Detect efi bootloaders
+</A></li>
+	<LI>Next message: <A HREF="000316.html">[sgd-en] [ Bug #18907 ] isodirs=$1 in scan_isos
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#311">[ date ]</a>
+              <a href="thread.html#311">[ thread ]</a>
+              <a href="subject.html#311">[ subject ]</a>
+              <a href="author.html#311">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

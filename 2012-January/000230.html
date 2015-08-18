@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] SG2D not to insmod biosdisk
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SG2D%20not%20to%20insmod%20biosdisk&In-Reply-To=%3CCAHh2SOTQO-4YNMZG-U5qjhgOB%2BR4kn%2B6dnXByX_TtucsQMR3mA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000227.html">
+   <LINK REL="Next"  HREF="000226.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] SG2D not to insmod biosdisk</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SG2D%20not%20to%20insmod%20biosdisk&In-Reply-To=%3CCAHh2SOTQO-4YNMZG-U5qjhgOB%2BR4kn%2B6dnXByX_TtucsQMR3mA%40mail.gmail.com%3E"
+       TITLE="[sgd-en] SG2D not to insmod biosdisk">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Sun Jan 29 01:35:07 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000227.html">[sgd-en] SG2D not to insmod biosdisk
+</A></li>
+        <LI>Next message: <A HREF="000226.html">[sgd-en] Rescatux 0.30 beta 4 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#230">[ date ]</a>
+              <a href="thread.html#230">[ thread ]</a>
+              <a href="subject.html#230">[ subject ]</a>
+              <a href="author.html#230">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Jan 24, 2012 at 2:38 PM, adrian15 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; wrote:
+&gt;<i> Rescatux 0.30 beta 4 is based on Super Grub2 Disk (before this commit).
+</I>&gt;<i>
+</I>&gt;<i> Does it mean that if I am going to boot it from Mac Book Pro (which has an
+</I>&gt;<i> EFI instead of a BIOS) is it going to complain about not being able to load
+</I>&gt;<i> biosdisk module?
+</I>
+No, Intel Macs have a BIOS implementation as well, and Rescatux 0.30
+beta 4 only has grub-pc, not grub-efi. Since only a BIOS based
+bootloader is available on the CD, an Intel Mac will use its BIOS
+implementation to boot from the CD. Also even if the grub.cfg with
+&quot;insmod biosdisk&quot; were to be used with grub-efi, an error message
+would be printed, but it wouldn't hurt anything. In fact it would be
+the same error message that's been printed in SG2D 1.98s1 because of
+my mistake of &quot;insmod part_biosdisk&quot; that you fixed, that nobody had
+ever even noticed :)
+
+-- 
+Jordan Uggla (Jordan_U on irc.freenode.net)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000227.html">[sgd-en] SG2D not to insmod biosdisk
+</A></li>
+	<LI>Next message: <A HREF="000226.html">[sgd-en] Rescatux 0.30 beta 4 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#230">[ date ]</a>
+              <a href="thread.html#230">[ thread ]</a>
+              <a href="subject.html#230">[ subject ]</a>
+              <a href="author.html#230">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

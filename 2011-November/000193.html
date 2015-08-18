@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Rescapp rewriten in python - Some screenshots
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescapp%20rewriten%20in%20python%20-%20Some%20screenshots&In-Reply-To=%3C4EB47259.5080605%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000192.html">
+   <LINK REL="Next"  HREF="000194.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Rescapp rewriten in python - Some screenshots</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescapp%20rewriten%20in%20python%20-%20Some%20screenshots&In-Reply-To=%3C4EB47259.5080605%40gmail.com%3E"
+       TITLE="[sgd-en] Rescapp rewriten in python - Some screenshots">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Nov  5 00:16:41 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000192.html">[sgd-en] How to build Super Grub2 Disk?
+</A></li>
+        <LI>Next message: <A HREF="000194.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 7512bc9c08505e0f5376cb426dc428bdb454aee5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#193">[ date ]</a>
+              <a href="thread.html#193">[ thread ]</a>
+              <a href="subject.html#193">[ subject ]</a>
+              <a href="author.html#193">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+   As you might know per the main page I am rewriting Rescapp in QT 
+thanks to Python.
+
+   I explain the images.
+
+   rescapp_python_1.png:
+   =====================
+
+   Well, that's it! This is the main menu. There are three columns so 
+that we can :
+   * Easily denote the right option thanks to its option (This is for 
+not having problems with translations)
+   * A button that opens a menu (It works right now) or selects an 
+option (not implemented yet).
+   * Know what the option is about
+
+   That Main Menu button is to the return to this same screen, the main 
+menu screen.
+
+   At the bottom there is an integrated webbrowser which it is pointing 
+at my local apache webserver. When you select an option its local 
+documentation is supposed to be shown there. I suppose we will put 
+videos there in the long term.
+
+
+   rescapp_python_2.png:
+   =====================
+
+   That's a test I have done with the Support menu. You can see all its 
+options.
+   * Ignore that Run ls -l button I have removed it.
+   * The integrated webbrowser is showing Spain's google.
+
+   What's left in the UI
+   ======================
+   * Label that shows the selected option
+   * Rescue! button so that it runs the option associated script (Only 
+when there is a selected option)
+   * Chat, Show log, Share log, Share log on forum will be permanent 
+buttons. Probably in the right side of the screen.
+
+   Other things needed
+   ====================
+   * Add rescapp.py to rescatux build process
+   * Check that rescatux has all the required python libraries and 
+binaries (add them to build process)
+   * I'm not sure but I think that rescapp.sh defined some global 
+variables before running the scripts. If that's true I will have to deal 
+with that
+
+So... This is all I want to develop till I officially release: Rescatux 0.30
+
+   Rescatux 0.31
+   =============
+   * I want to implement thanks to python an screen that lets the user 
+order their hard disks. (Far better than the current zenity way with n+1 
+screens)
+   * Maybe some other python screens for user interaction
+
+
+   About the code
+   ==============
+
+   I won't update the code to GIT till I get the same functionality as 
+the old rescapp in the UI. Doesn't matter if the UI is ugly or not. I 
+might release a beta when that happens.
+
+   Feedback
+   ========
+
+   What do you think?
+
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rescapp_python_1.png
+Type: image/png
+Size: 33130 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/supergrub-english/attachments/20111105/53a50ad3/attachment.png">https://lists.berlios.de/pipermail/supergrub-english/attachments/20111105/53a50ad3/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rescapp_python_2.png
+Type: image/png
+Size: 93407 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/supergrub-english/attachments/20111105/53a50ad3/attachment-0001.png">https://lists.berlios.de/pipermail/supergrub-english/attachments/20111105/53a50ad3/attachment-0001.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000192.html">[sgd-en] How to build Super Grub2 Disk?
+</A></li>
+	<LI>Next message: <A HREF="000194.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 7512bc9c08505e0f5376cb426dc428bdb454aee5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#193">[ date ]</a>
+              <a href="thread.html#193">[ thread ]</a>
+              <a href="subject.html#193">[ subject ]</a>
+              <a href="author.html#193">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

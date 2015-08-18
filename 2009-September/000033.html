@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Rescatux - metadialog command
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%20-%20metadialog%20command&In-Reply-To=%3C4AA3FF9F.20404%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000032.html">
+   <LINK REL="Next"  HREF="000034.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Rescatux - metadialog command</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%20-%20metadialog%20command&In-Reply-To=%3C4AA3FF9F.20404%40gmail.com%3E"
+       TITLE="[sgd-en] Rescatux - metadialog command">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sun Sep  6 20:29:51 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000032.html">[sgd-en] Last SGD based on grub legacy version 0.9798 released
+</A></li>
+        <LI>Next message: <A HREF="000034.html">[sgd-en] metadialog draft #1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#33">[ date ]</a>
+              <a href="thread.html#33">[ thread ]</a>
+              <a href="subject.html#33">[ subject ]</a>
+              <a href="author.html#33">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi SGD mailing list,
+
+	I have tried to resume Rescatux development (One of my vaporware 
+projects like Nowin).
+
+	Rescatux will be a graphical rescue distro.
+	Rescapp will be the main Rescatux program for recovering GNU/Linux 
+installations and other OSes.
+
+	The first obstacle that I have is the user interaction. We need some 
+sort of dialog system. But which one to use? Zenity, gdialog, kdialog? 
+And what happens if we are in text mode? Shouldn't Rescapp work also in 
+text mode? So that means that we need to fallback into a text-only 
+dialog system if X is not present.
+
+	The first idea that I have had is to make a wrapper around dialog (only 
+text mode), zenity (gtk/gnome) and kdialog (or whatever it is called).
+
+	I have been searching in Debian packages from current unstable 
+distribution and I have found a wrapper that makes more or less what I need.
+
+It is a perl module package called: libui-dialog-perl.
+
+Its description is:
+
+UI::Dialog is an OOPerl wrapper for various dialog
+  applications. These dialog backends are currently
+supported: Zenity, XDialog, GDialog, KDialog, CDialog,
+and Whiptail. There is also an ASCII backend provided
+as a last resort interface for console based dialog
+variants. UI::Dialog is a class that provides a strict
+interface to these various backend modules.
+
+  Homepage: <A HREF="http://search.cpan.org/dist/UI-Dialog-1.0">http://search.cpan.org/dist/UI-Dialog-1.0</A>
+
+My first idea of my metadialog (the name I have choosen for my 
+dialog/zenity/kdialog was to be a single program similar to zenity one, 
+with the same options.
+
+If I choose to use UI::Dialog I will have to write all the Rescapp 
+scripts in perl.
+
+Although I suppose that perl is a great language I do not want to reduce 
+every Rescapp script to perl. And, of course, I like the bash scripts too.
+
+So my final decision (which we can discuss if you want to, of course) is 
+to make a wrapper called metadialog or maybe mdialog around 
+libui-dialog-perl because I am not ready to rewrite this perl module 
+into what I wanted to do in the first place.
+
+So one of my first implementation drafts is to make a perl script 
+(although it might be a bash one) that parses options so that they match 
+the zenity options (only the zenity options that libui-dialog-perl 
+module recognises in its &quot;meta&quot; mode) and then calls the correspondent 
+libui-dialog-perl functions and outputs its results to default output.
+
+I think that in order to mimic the zenity scripts the data output should 
+go to 1 (stdout) and the dialog output (drawing dialogs in text mode) 
+should go to 4 (I am not sure about outputting it to 2 (stderr)).
+
+You know as long as zenity scripts did not have to write its menues in 
+text mode it did not have to care about where to write to them.
+
+I mean, this is what does happen right now:
+
+Zenity write its data to 1 (stdout). Dialog are not written anywhere but 
+showed thanks to gtk in gtk windows.
+
+Dialog which it is a text-only mode dialog tool write its data to 2 
+(stderr) while the dialogs are written to 1 (stdout).
+
+The libui-dialog-perl inclusion in Rescatux implies a perl 5.6.0-16 
+dependency (in my Debian unstable system). I actually do not know how 
+much that will be increasing the live cd size. If you have any idea 
+please comment here.
+
+Your feedback is highly appreciated.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000032.html">[sgd-en] Last SGD based on grub legacy version 0.9798 released
+</A></li>
+	<LI>Next message: <A HREF="000034.html">[sgd-en] metadialog draft #1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#33">[ date ]</a>
+              <a href="thread.html#33">[ thread ]</a>
+              <a href="subject.html#33">[ subject ]</a>
+              <a href="author.html#33">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

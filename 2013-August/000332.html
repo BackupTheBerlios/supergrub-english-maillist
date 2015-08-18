@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Rescatux 0.31 beta 4 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.31%20beta%204%20released&In-Reply-To=%3C520A3CC0.2040500%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000331.html">
+   <LINK REL="Next"  HREF="000333.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Rescatux 0.31 beta 4 released</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.31%20beta%204%20released&In-Reply-To=%3C520A3CC0.2040500%40gmail.com%3E"
+       TITLE="[sgd-en] Rescatux 0.31 beta 4 released">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Tue Aug 13 16:03:44 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000331.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7a2bbfd6c2cfc27318e3880fec800c87a9310d82
+</A></li>
+        <LI>Next message: <A HREF="000333.html">[sgd-en] Super Grub2 Disk 2.00 beta 6 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#332">[ date ]</a>
+              <a href="thread.html#332">[ thread ]</a>
+              <a href="subject.html#332">[ subject ]</a>
+              <a href="author.html#332">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Original piece of news:
+<A HREF="http://www.supergrubdisk.org/2013/08/13/rescatux-0-31-beta-4-released/">http://www.supergrubdisk.org/2013/08/13/rescatux-0-31-beta-4-released/</A>
+
+Rescatux 0.31 beta 4 has been released.
+
+New features:
+* Better handle of /boot/grub2 in Fedora installations when running 
+grub-install or update-grub options
+* Update Grub should work in any Grub2 system (previous version only 
+worked on Debian or Ubuntu distributions)
+* New option: Promote a Windows user to Administrator
+* XFE is the new file manager instead of qtfm
+* New option: Unlock a Windows user to re-enable it
+* LVM and RAID support for Restore Grub and Update Grub options (It 
+seems it already worked from 0.30.2)
+
+Known bugs:
+* Handling of directories with spaces when detecting Windows SAM files 
+is not optimal
+* Double-clicking on directories on desktop opens Iceweasel (Firefox 
+fork) instead of a file manager
+* Bottom bar does not have a shorcut to a file manager as it&#8217;s a common 
+practice in modern desktops
+
+Pending features or bugfixes for 0.31 stable release:
+* Select keyboard from Grub2 boot or Isolinux boot so that you can type 
+your correct password when resetting Gnu/Linux password
+* New option: Easy Grub fix: Runs both Restore Grub and Update Grub options
+* New option: Easy Windows Admin that runs: unlock user, promote user to 
+admin and blank admin user password so that you can straight-forward as 
+a windows admin user.
+* Rewriting of Windows chntpw based options so that source code is not 
+repeated
+
+Downloads:
+* Rescatux 0.31 beta 4 Cdrom or USB ISO for x86 or amd64 (Berlios)
+(MD5)
+* Rescatux 0.31b4 size is about 427 Megabytes.
+
+Distro facts:
+* Packages versions for this release can be found at Rescatux 0.31b4 
+packages.
+* It&#8217;s based on Debian Wheezy (Stable) and Debian Sid (for razor-qt).
+* The beta download link is: 
+<A HREF="http://www.supergrubdisk.org/category/download/rescatuxdownloads/rescatux-beta/">http://www.supergrubdisk.org/category/download/rescatuxdownloads/rescatux-beta/</A>
+* Bug tracker is found at: Cenatic Forge Rescatux Issue Tracker
+
+Feedback welcome:
+I&#8217;ve tried myself the distro in my dev environment for the new options, 
+not the old ones and they seem to start ok. Another thing is doing a 
+full test about their complete functionality. Please test the ISO and 
+report back if something that worked on previous stable versions no 
+longer works in this beta version.
+Don&#8217;t forget that you can use:
+* Super Grub(2) Mailing list
+* Rescatux Forum
+* Chat
+
+Help Rescatux project if you cannot wait:
+I am very busy right now at work. So you should expect two, three or 
+four months of Rescatux development stalling. These are some of the 
+funny tasks that anyone can easily contribute to: Making a youtube video 
+for the new options. Make sure documentation for the new options is 
+right. Translate the documentation of new options to Spanish. Make 
+snapshots for new options documentation so that they don&#8217;t lack images.
+If you want to help please contact us here:
+* Super Grub(2) Mailing list
+* Rescatux Forum
+* Chat
+
+Some thoughts:
+I think that making Rescatux 0.31 stable is more defined than ever. The 
+keyboard support needs to be there so that Gnu/Linux password change is 
+done with the right password and not another one, and also so that 
+people are not annoyed when trying to use chat. Improve the 
+documentation so that there&#8217;s nothing missing and nothing more.
+There are also these new easy options that combine individual options 
+functionality into one just to make live easier for everyone also but 
+that doesn&#8217;t seem too complex to develop and it will encourage to reuse 
+code and thus improve the rescatux_lib library.
+This release uses SG2D 2.00 beta 6, which it will be released soon. That 
+means that it supports both BIOS and EFI boot hopefully. You&#8217;re invited 
+to test that functionality too.
+
+Thank you and happy download!
+
+
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000331.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7a2bbfd6c2cfc27318e3880fec800c87a9310d82
+</A></li>
+	<LI>Next message: <A HREF="000333.html">[sgd-en] Super Grub2 Disk 2.00 beta 6 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#332">[ date ]</a>
+              <a href="thread.html#332">[ thread ]</a>
+              <a href="subject.html#332">[ subject ]</a>
+              <a href="author.html#332">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

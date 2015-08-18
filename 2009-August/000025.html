@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] r6 - / baellsdeb baellsdeb/debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20r6%20-%20/%20baellsdeb%20baellsdeb/debian&In-Reply-To=%3C200908142355.n7ENtGFv011825%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000024.html">
+   <LINK REL="Next"  HREF="000026.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] r6 - / baellsdeb baellsdeb/debian</H1>
+    <B>adrian15 at mail.berlios.de</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20r6%20-%20/%20baellsdeb%20baellsdeb/debian&In-Reply-To=%3C200908142355.n7ENtGFv011825%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] r6 - / baellsdeb baellsdeb/debian">adrian15 at mail.berlios.de
+       </A><BR>
+    <I>Sat Aug 15 01:55:16 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000024.html">[sgd-en] r5 - / baells baells/menus
+</A></li>
+        <LI>Next message: <A HREF="000026.html">[sgd-en] Debian supergrub package development news
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Author: adrian15
+Date: 2009-08-15 01:54:48 +0200 (Sat, 15 Aug 2009)
+New Revision: 6
+
+Added:
+   baellsdeb/
+   baellsdeb/debian/
+   baellsdeb/debian/changelog
+   baellsdeb/debian/compat
+   baellsdeb/debian/control
+   baellsdeb/debian/copyright
+   baellsdeb/debian/docs
+   baellsdeb/debian/rules
+   baellsdeb/debian/supergrub.8
+Log:
+Added baellsdeb branch. The Debian package based on grub2 (only debian directory).
+
+Added: baellsdeb/debian/changelog
+===================================================================
+--- baellsdeb/debian/changelog	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/changelog	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,11 @@
++supergrub (1.02) unstable; urgency=low
++
++  * Some lintian notices removed.
++
++ -- Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;  Sun, 02 Aug 2009 20:59:26 +0200
++
++supergrub (1.01) unstable; urgency=low
++
++  * Initial release.
++
++ -- Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;  Sun, 02 Aug 2009 19:59:26 +0200
+
+Added: baellsdeb/debian/compat
+===================================================================
+--- baellsdeb/debian/compat	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/compat	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1 @@
++7
+
+Added: baellsdeb/debian/control
+===================================================================
+--- baellsdeb/debian/control	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/control	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,17 @@
++Source: supergrub
++Section: admin
++Priority: optional
++Maintainer: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;
++Build-Depends: debhelper (&gt;= 7),
++ grub-pc (&gt;= 1.96)
++Standards-Version: 3.8.2
++Homepage: <A HREF="http://www.supergrubdisk.org">http://www.supergrubdisk.org</A>
++
++Package: supergrub
++Architecture: any
++Depends: ${shlibs:Depends}, ${misc:Depends}
++Description: Grub rescue bootable disk
++ Grub rescue bootable disk which can be used to boot
++ into several operating systems. It tries to autodetect
++ boot settings or lets you do a manual boot.
++
+
+Added: baellsdeb/debian/copyright
+===================================================================
+--- baellsdeb/debian/copyright	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/copyright	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,24 @@
++This package was debianized by Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; on
++Sun, 02 Aug 2009 19:59:26 +0200.
++
++It was downloaded from <A HREF="http://supergrub.berlios.de">http://supergrub.berlios.de</A>
++
++Upstream Author:
++
++    Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;
++
++Copyright:
++
++    Copyright (C) 2009 Adrian Gibanel Lopez
++
++License:
++
++    GPL-3+
++
++The Debian packaging is:
++
++    Copyright (C) 2009 Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;
++
++and is licensed under the GPL version 3, 
++see `/usr/share/common-licenses/GPL-3'.
++
+
+Added: baellsdeb/debian/docs
+===================================================================
+--- baellsdeb/debian/docs	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/docs	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,8 @@
++NEWS
++README
++TODO
++AUTHORS
++COPYING
++THANKS
++INSTALL
++
+
+Added: baellsdeb/debian/rules
+===================================================================
+--- baellsdeb/debian/rules	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/rules	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,91 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++# Sample debian/rules that uses debhelper.
++# This file was originally written by Joey Hess and Craig Small.
++# As a special exception, when this file is copied by dh-make into a
++# dh-make output file, you may use that output file without restriction.
++# This special exception was added by Craig Small in version 0.37 of dh-make.
++
++# Uncomment this to turn on verbose mode.
++#export DH_VERBOSE=1
++
++
++
++
++
++configure: configure-stamp
++configure-stamp:
++	dh_testdir
++	# Add here commands to configure the package.
++
++	touch configure-stamp
++
++
++build: build-stamp
++
++build-stamp: configure-stamp  
++	dh_testdir
++
++	# Add here commands to compile the package.
++	$(MAKE)
++	#docbook-to-man debian/supergrub.sgml &gt; supergrub.1
++
++	touch $@
++
++clean: 
++	dh_testdir
++	dh_testroot
++	rm -f build-stamp configure-stamp
++
++	# Add here commands to clean up after the build process.
++	$(MAKE) clean
++
++	dh_clean 
++
++install: build
++	dh_testdir
++	dh_testroot
++	dh_prep  
++	dh_installdirs
++
++	# Add here commands to install the package into debian/supergrub.
++	$(MAKE) DESTDIR=$(CURDIR)/debian/supergrub install
++
++
++# Build architecture-independent files here.
++binary-indep: install
++# We have nothing to do by default.
++
++# Build architecture-dependent files here.
++binary-arch: install
++	dh_testdir
++	dh_testroot
++	dh_installchangelogs 
++	dh_installdocs
++	dh_installexamples
++#	dh_install
++#	dh_installmenu
++#	dh_installdebconf
++#	dh_installlogrotate
++#	dh_installemacsen
++#	dh_installpam
++#	dh_installmime
++#	dh_python
++#	dh_installinit
++#	dh_installcron
++#	dh_installinfo
++	dh_installman
++	dh_link
++	dh_strip
++	dh_compress
++	dh_fixperms
++#	dh_perl
++#	dh_makeshlibs
++	dh_installdeb
++	dh_shlibdeps
++	dh_gencontrol
++	dh_md5sums
++	dh_builddeb
++
++binary: binary-indep binary-arch
++.PHONY: build clean binary-indep binary-arch binary install configure
+
+
+Property changes on: baellsdeb/debian/rules
+___________________________________________________________________
+Name: svn:executable
+   + *
+
+Added: baellsdeb/debian/supergrub.8
+===================================================================
+--- baellsdeb/debian/supergrub.8	2009-08-14 23:43:12 UTC (rev 5)
++++ baellsdeb/debian/supergrub.8	2009-08-14 23:54:48 UTC (rev 6)
+@@ -0,0 +1,14 @@
++.TH SUPERGRUB &quot;8&quot; &quot;August  2, 2009&quot;
++.SH NAME
++supergrub \- manual page for supergrub
++.SH DESCRIPTION
++supergrub cdrom (iso) and floppy (img) files are found at: /usr/lib/supergrub/ directory.
++.TP
++/usr/lib/supergrub/sgd_cdrom.iso
++.TP
++/usr/lib/supergrub/sgd_floppy.img
++.SH AUTHOR
++supergrub was written by Adrian Gibanel Lopez.
++.PP
++This manual page was written by Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt;,
++for the Debian project (and may be used by others).
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000024.html">[sgd-en] r5 - / baells baells/menus
+</A></li>
+	<LI>Next message: <A HREF="000026.html">[sgd-en] Debian supergrub package development news
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

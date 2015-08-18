@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 3a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%203a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44&In-Reply-To=%3C20120220083328.E7C99481598%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000235.html">
+   <LINK REL="Next"  HREF="000237.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 3a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%203a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44&In-Reply-To=%3C20120220083328.E7C99481598%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 3a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44">noreply at berlios.de
+       </A><BR>
+    <I>Mon Feb 20 09:33:28 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000235.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 9848661c45790ec551a2a1c9c44f288b7c789a5e
+</A></li>
+        <LI>Next message: <A HREF="000237.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 55da98b0fcb65271afe25f8d46cb634809b0ea9c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  3a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44 (commit)
+      from  ec5c8935daa61b59877c579f41e969e6bfc1d8a6 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 3a2a2b46f5bf91644d6ab9274cbfc0ad96f9fb44
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Mon Feb 20 00:22:04 2012 -0800
+
+    Rewrite i18n support
+    
+     * Previous i18n support required an extra step at build time, running
+     * gernerate_translation_cfg.sh, was difficult to understand,
+     * complicated, and poorly documented.
+    
+     * This replacement should hopefully only be temporary, for this release
+     * only. Grub 2.0 should include a way to use gettext effectively in
+     * grub-script, and provide translations outside strings in grub itself
+     * as explained here:
+     * <A HREF="http://lists.gnu.org/archive/html/grub-devel/2012-02/msg00117.html">http://lists.gnu.org/archive/html/grub-devel/2012-02/msg00117.html</A>
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ generate_translation_cfg.sh                        |   38 --------------------
+ menus/language_select.cfg                          |    8 ++++
+ menus/main_template.cfg                            |   13 ++++++-
+ {translations =&gt; menus/translations}/de/de.cfg     |    0
+ {translations =&gt; menus/translations}/de/de.sh      |    0
+ {translations =&gt; menus/translations}/en/en.cfg     |    0
+ {translations =&gt; menus/translations}/en/en.sh      |    0
+ {translations =&gt; menus/translations}/es/es.cfg     |    0
+ {translations =&gt; menus/translations}/es/es.sh      |    0
+ {translations =&gt; menus/translations}/ms/ms.cfg     |    0
+ {translations =&gt; menus/translations}/ms/ms.sh      |    0
+ .../translations_export.cfg                        |    2 -
+ supergrub-mkrescue                                 |    8 +++-
+ 13 files changed, 26 insertions(+), 43 deletions(-)
+ delete mode 100755 generate_translation_cfg.sh
+ create mode 100644 menus/language_select.cfg
+ rename {translations =&gt; menus/translations}/de/de.cfg (100%)
+ rename {translations =&gt; menus/translations}/de/de.sh (100%)
+ rename {translations =&gt; menus/translations}/en/en.cfg (100%)
+ rename {translations =&gt; menus/translations}/en/en.sh (100%)
+ rename {translations =&gt; menus/translations}/es/es.cfg (100%)
+ rename {translations =&gt; menus/translations}/es/es.sh (100%)
+ rename {translations =&gt; menus/translations}/ms/ms.cfg (100%)
+ rename {translations =&gt; menus/translations}/ms/ms.sh (100%)
+ rename translations_export.cfg =&gt; menus/translations_export.cfg (90%)
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000235.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 9848661c45790ec551a2a1c9c44f288b7c789a5e
+</A></li>
+	<LI>Next message: <A HREF="000237.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 55da98b0fcb65271afe25f8d46cb634809b0ea9c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

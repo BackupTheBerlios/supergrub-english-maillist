@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Detect efi bootloaders
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Detect%20efi%20bootloaders&In-Reply-To=%3C51815B16.1080408%40users.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000315.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Detect efi bootloaders</H1>
+    <B>Niall Walsh</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Detect%20efi%20bootloaders&In-Reply-To=%3C51815B16.1080408%40users.berlios.de%3E"
+       TITLE="[sgd-en] Detect efi bootloaders">niallwalsh at users.berlios.de
+       </A><BR>
+    <I>Wed May  1 20:12:38 CEST 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000315.html">[sgd-en] Detect efi bootloaders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#310">[ date ]</a>
+              <a href="thread.html#310">[ thread ]</a>
+              <a href="subject.html#310">[ subject ]</a>
+              <a href="author.html#310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+attached is an idea for an efidetect.cfg to be used by sgrub2.
+This will only be useful if sgrub2 has an efi bootable iso and
+hence any main.cfg inclusion should check the current boot
+was by efi.
+
+The idea is that this can detect sane available efi bootloaders
+and offer to chainloader them.   This can be useful if there is a
+problem with efivars or when the board does not offer a
+firmware menu to select amongst available bootloaders.
+
+Sane above means that it only checks for *.efi files on gpt disks,
+also it only forces loading of the fat module.   I guess perhaps
+an argument can be made to also check hfs for Apple (but I've
+no idea what else that might need anyway).
+
+I think the ordering and comprehensiveness of the list of paths
+to check for efi files is the most debatable part.  Other
+bootloaders used in the wild (say gummiboot) may need this
+tweaked and perhaps the checks which aren't anchored in /efi
+are excessive, though (*,gpt*)/*/*.efi is covering
+(*,gpt*)/efi/*.efi
+
+Hope this helps and thanks for sgrub2,
+
+Niall
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: efidetect.cfg
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/supergrub-english/attachments/20130501/ffb58fee/attachment.ksh">https://lists.berlios.de/pipermail/supergrub-english/attachments/20130501/ffb58fee/attachment.ksh</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000315.html">[sgd-en] Detect efi bootloaders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#310">[ date ]</a>
+              <a href="thread.html#310">[ thread ]</a>
+              <a href="subject.html#310">[ subject ]</a>
+              <a href="author.html#310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

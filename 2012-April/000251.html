@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-April/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0&In-Reply-To=%3C20120429222821.29D6455B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000250.html">
+   <LINK REL="Next"  HREF="000252.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0&In-Reply-To=%3C20120429222821.29D6455B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0">noreply at berlios.de
+       </A><BR>
+    <I>Mon Apr 30 00:28:20 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000250.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. e2750188594de62173777d4997576bba7e27b8e4
+</A></li>
+        <LI>Next message: <A HREF="000252.html">[sgd-en] GRUB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#251">[ date ]</a>
+              <a href="thread.html#251">[ thread ]</a>
+              <a href="subject.html#251">[ subject ]</a>
+              <a href="author.html#251">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0 (commit)
+       via  cd6fc7d8c3959753c39cbcfced1b1b5370ff61d9 (commit)
+       via  92e3722c7666fc6f95a60c8a8ea471554441098a (commit)
+      from  6561c45189df3c7563787ec771129bdb1a86ed89 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit cbfc6e3b7567bf8a23df25c8f6bba39e1ad5b6f0
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Apr 29 15:19:06 2012 -0700
+
+    Add and document new update_po script
+    
+     * Also add general documentation for developers on how to develop
+     * translatable code to TRANSLATORS.
+
+commit cd6fc7d8c3959753c39cbcfced1b1b5370ff61d9
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Apr 29 00:19:49 2012 -0700
+
+    Change how the language selection menu is implemented
+    
+     * Move info_cfg files into menus/sgd_locale and change their format
+     * slightly.
+    
+     * info_cfg files now contain a variable $lang_code, wich is set to the
+     * two letter language code for the translation in question, and
+     * $lang_name which is the name of the language in that language.
+    
+     * Language menu now uses the name of the language in that language,
+     * rather than the name of the language in English.
+    
+     * Adding new translations is made easier by automating the creation of
+     * new info_cfg files in grub-mkrescue whenever a new po file is
+     * created. This way translators should hopefully not need to know
+     * anything about Super GRUB2 Disks translation system other than how to
+     * work with gettext.
+    
+     * Document how to add new translations in the new system in
+     * TRANSLATION.
+    
+     * Remove set -x from grub-mkrescue to make it easier to notice message
+     * to translators, and to make any error messages easier to see (so they
+     * aren't lost in the flood of normal output).
+
+commit 92e3722c7666fc6f95a60c8a8ea471554441098a
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Fri Apr 27 17:34:39 2012 -0700
+
+    Remove files from old translation system.
+    
+     * Should have been done in the previous commit but I missed them.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ TRANSLATION                          |   32 +++++++++++++++++++++++---------
+ info_cfg_header.cfg                  |    4 ++++
+ language_template_entry_footer.cfg   |    4 ----
+ language_template_entry_header.cfg   |    7 -------
+ menus/language_select.cfg            |    6 +++---
+ menus/sgd_locale/de_info.cfg         |    6 ++++++
+ menus/sgd_locale/en_info.cfg         |    6 ++++++
+ menus/sgd_locale/es_info.cfg         |    6 ++++++
+ menus/sgd_locale/fr_info.cfg         |    6 ++++++
+ menus/sgd_locale/ms_info.cfg         |    6 ++++++
+ menus/translations/de/de_info.cfg    |    3 ---
+ menus/translations/en/en_info.cfg    |    3 ---
+ menus/translations/es/es_info.cfg    |    3 ---
+ menus/translations/es/es_strings.cfg |   14 --------------
+ menus/translations/fr/fr_info.cfg    |    3 ---
+ menus/translations/ms/ms_info.cfg    |    3 ---
+ menus/translations/ms/ms_strings.cfg |   21 ---------------------
+ menus/translations_export.cfg        |   13 -------------
+ supergrub-mkrescue                   |   27 +++++++++++++++++++++++----
+ update_po                            |   11 +++++++++++
+ xgettext_file_list                   |    1 +
+ 21 files changed, 95 insertions(+), 90 deletions(-)
+ create mode 100644 info_cfg_header.cfg
+ delete mode 100644 language_template_entry_footer.cfg
+ delete mode 100644 language_template_entry_header.cfg
+ create mode 100644 menus/sgd_locale/de_info.cfg
+ create mode 100644 menus/sgd_locale/en_info.cfg
+ create mode 100644 menus/sgd_locale/es_info.cfg
+ create mode 100644 menus/sgd_locale/fr_info.cfg
+ create mode 100644 menus/sgd_locale/ms_info.cfg
+ delete mode 100644 menus/translations/de/de_info.cfg
+ delete mode 100644 menus/translations/en/en_info.cfg
+ delete mode 100644 menus/translations/es/es_info.cfg
+ delete mode 100644 menus/translations/es/es_strings.cfg
+ delete mode 100644 menus/translations/fr/fr_info.cfg
+ delete mode 100644 menus/translations/ms/ms_info.cfg
+ delete mode 100644 menus/translations/ms/ms_strings.cfg
+ delete mode 100644 menus/translations_export.cfg
+ create mode 100755 update_po
+ create mode 100644 xgettext_file_list
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000250.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. e2750188594de62173777d4997576bba7e27b8e4
+</A></li>
+	<LI>Next message: <A HREF="000252.html">[sgd-en] GRUB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#251">[ date ]</a>
+              <a href="thread.html#251">[ thread ]</a>
+              <a href="subject.html#251">[ subject ]</a>
+              <a href="author.html#251">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

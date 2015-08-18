@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [PATCH] Update module names for GRUB 1.97
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BPATCH%5D%20Update%20module%20names%20for%20GRUB%201.97&In-Reply-To=%3C4ACD32DB.5040507%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000041.html">
+   <LINK REL="Next"  HREF="000046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [PATCH] Update module names for GRUB 1.97</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BPATCH%5D%20Update%20module%20names%20for%20GRUB%201.97&In-Reply-To=%3C4ACD32DB.5040507%40gmail.com%3E"
+       TITLE="[sgd-en] [PATCH] Update module names for GRUB 1.97">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Thu Oct  8 02:31:23 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000041.html">[sgd-en] [PATCH] Add option to find and load grub.cfg files (	updated )
+</A></li>
+        <LI>Next message: <A HREF="000046.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I figured out why the CDs I created with GRUB 1.97 beta 3/4 couldn't read 
+partition tables; the grub module names changed from 1.96 to 1.97. So 
+while the grub.cfg tried to insmod pc, it needed to insmod part_msdos. I 
+thought it was a problem with grub-mkrescue because the same grub.cfg 
+worked when I used it from the same version of grub on my hard drive, not 
+realizing that on my hard drive part_msdos was already embedded by 
+grub-install :)
+
+This is a patch to update all of the module names to those used in 1.97.
+
+---
+ menus/grub.cfg |   14 +++++++-------
+ 1 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/menus/grub.cfg b/menus/grub.cfg
+index e1a3004..62139e9 100644
+--- a/menus/grub.cfg
++++ b/menus/grub.cfg
+@@ -14,13 +14,13 @@
+ # You should have received a copy of the GNU General Public License
+ # along with GRUB.  If not, see &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&gt;.
+ 
+-insmod biosdisk
+-insmod acorn
+-insmod amiga
+-insmod apple
+-insmod gpt
+-insmod pc
+-insmod sun
++insmod part_biosdisk
++insmod part_acorn
++insmod part_amiga
++insmod part_apple
++insmod part_gpt
++insmod part_msdos
++insmod part_sun
+ 
+ # Set OSes names
+ 
+-- 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000041.html">[sgd-en] [PATCH] Add option to find and load grub.cfg files (	updated )
+</A></li>
+	<LI>Next message: <A HREF="000046.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

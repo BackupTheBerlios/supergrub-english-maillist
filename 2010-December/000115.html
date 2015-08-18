@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Rescatux 0.21 released and help on Update Grub Configuration on non Debian/Ubuntu systems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.21%20released%20and%20help%20on%20Update%20Grub%0A%20Configuration%20on%20non%20Debian/Ubuntu%20systems&In-Reply-To=%3C4CFDF905.1030904%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000112.html">
+   <LINK REL="Next"  HREF="000118.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Rescatux 0.21 released and help on Update Grub Configuration on non Debian/Ubuntu systems</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Rescatux%200.21%20released%20and%20help%20on%20Update%20Grub%0A%20Configuration%20on%20non%20Debian/Ubuntu%20systems&In-Reply-To=%3C4CFDF905.1030904%40gmail.com%3E"
+       TITLE="[sgd-en] Rescatux 0.21 released and help on Update Grub Configuration on non Debian/Ubuntu systems">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Tue Dec  7 10:06:13 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000112.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. ca43023f0f8ce8b415021fa459d77921a1530e7c
+</A></li>
+        <LI>Next message: <A HREF="000118.html">[sgd-en] Comment on SDGWiki page SGD Howto make
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#115">[ date ]</a>
+              <a href="thread.html#115">[ thread ]</a>
+              <a href="subject.html#115">[ subject ]</a>
+              <a href="author.html#115">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Help on Updating Grub Configuration on non Debian/Ubuntu distributions
+=====================
+
+As you might have seen in previous post I have just released Rescatux 
+0.21 which features the new option &#8220;Update Grub configuration&#8221;.
+It is the same option as if you chroot into your system thanks to a live 
+cd and run update-grub inside it.
+
+However it is special because it lets you rename the live cd hard disk 
+names so that they meet your normal (the ones that your installed 
+distribution knows) hard disk names. More than this you can order them 
+according to your BIOS hard disk boot order.
+
+Unfortunately I have only coded this for Debian / Ubuntu based 
+distributions. It should work for both grub and grub though.
+
+So if you know how to run something equivalent to update-grub 
+(automatically detect OSes in your system and build either a menu.lst 
+(grub) or grub.cfg (grub2)) in either Opensuse, Mandrake, Fedora, Arch, 
+Gentoo or any other non-Debian based system I am glad to hear you.
+
+I am very interested in knowing if grub2 implementations of these 
+distributions have or not update-grub script by default or not.
+---
+Rescatux 0.21 released
+=====================
+Rescatux 0.21 Cdrom or USB ISO for x86 or amd64 Mirror #1 Mirror #2
+MD5 (477 Megabytes)
+
+* 
+<A HREF="http://download.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso">http://download.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso</A>
+* 
+<A HREF="http://download2.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso">http://download2.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso</A>
+* 
+<A HREF="http://download.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso.md5">http://download.berlios.de/rescatux/rescatux_cdrom_usb_hybrid_i386_486-amd64_2010_12_06.iso.md5</A>
+* <A HREF="http://developer.berlios.de/project/filelist.php?group_id=11211">http://developer.berlios.de/project/filelist.php?group_id=11211</A>
+
+Source code and other downloads
+Useful Rescatux Options:
+
+     * Restore Grub to the MBR
+     * Update Grub Configuration
+
+Changelog:
+
+     * Now login is automatic
+     * Added &#8220;Update Grub Configuration&#8221; option that lets you rename 
+your hard disks names, order them by BIOS hard disk boot order.
+     * &#8220;Update Grub Configuration&#8221; should only work with Debian based 
+distributions such as Ubuntu.
+
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000112.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. ca43023f0f8ce8b415021fa459d77921a1530e7c
+</A></li>
+	<LI>Next message: <A HREF="000118.html">[sgd-en] Comment on SDGWiki page SGD Howto make
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#115">[ date ]</a>
+              <a href="thread.html#115">[ thread ]</a>
+              <a href="subject.html#115">[ subject ]</a>
+              <a href="author.html#115">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

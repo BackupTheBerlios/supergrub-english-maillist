@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Finding devices on /sys/
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Finding%20devices%20on%20/sys/&In-Reply-To=%3C4E0B8670.40600%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000173.html">
+   <LINK REL="Next"  HREF="000175.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Finding devices on /sys/</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Finding%20devices%20on%20/sys/&In-Reply-To=%3C4E0B8670.40600%40gmail.com%3E"
+       TITLE="[sgd-en] Finding devices on /sys/">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Wed Jun 29 22:09:20 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000173.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+        <LI>Next message: <A HREF="000175.html">[sgd-en] Resclib first draft
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 29/06/11 02:52, <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">yannubuntu at gmail.com</A> escribi&#243;:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Why not using /sys/block/sdX/ ... ?
+</I>&gt;<i>
+</I>&gt;<i> Yann
+</I>
+==First of all==
+
+I don't mind the devices being discovered from /proc/partitions from 
+/sys or from another place (even kernel calls).
+
+As long as it works from Rescatux.
+
+==However== it would be nice that: resclib (Whatever the common library 
+name to rescue projects like: Rescatux, boot-repair, BIS, System Rescue 
+cd) should be able to deal with different distribution scenarios.
+
+I mean that there might be some old distributions where /sys does not 
+exist at all.
+
+==What I mean== is that you should think on making the code to check for 
+/sys if it is a better source and if /sys does not exist it should be 
+able to read from /proc/partitions.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000173.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master, updated. 886395367289575b301115d61ca3b22bfa8b1d2f
+</A></li>
+	<LI>Next message: <A HREF="000175.html">[sgd-en] Resclib first draft
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

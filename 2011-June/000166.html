@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 6fa4d88ace3e37d6122668189f9d55289ad3545a
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%206fa4d88ace3e37d6122668189f9d55289ad3545a&In-Reply-To=%3C20110628054240.07B044815AF%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000165.html">
+   <LINK REL="Next"  HREF="000167.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 6fa4d88ace3e37d6122668189f9d55289ad3545a</H1>
+    <B>gerth at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%206fa4d88ace3e37d6122668189f9d55289ad3545a&In-Reply-To=%3C20110628054240.07B044815AF%40sheep.berlios.de%3E"
+       TITLE="[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 6fa4d88ace3e37d6122668189f9d55289ad3545a">adrian15 at users.berlios.de
+       </A><BR>
+    <I>Tue Jun 28 07:42:39 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000165.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 9bcef52605b0384f662b5cd8e5f323f77e534278
+</A></li>
+        <LI>Next message: <A HREF="000167.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 68494dc88eac75407f6dc1976a06907e28e1d291
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#166">[ date ]</a>
+              <a href="thread.html#166">[ thread ]</a>
+              <a href="subject.html#166">[ subject ]</a>
+              <a href="author.html#166">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project rescatux at BerliOS&quot;.
+
+The branch, master has been updated
+       via  6fa4d88ace3e37d6122668189f9d55289ad3545a (commit)
+       via  3bc66c66614d743a0564d6ec7257286678f35b68 (commit)
+       via  dc630955eaf7a42b66f2c839138c60e48585ddfa (commit)
+      from  9bcef52605b0384f662b5cd8e5f323f77e534278 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 6fa4d88ace3e37d6122668189f9d55289ad3545a
+Author: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+Date:   Tue Jun 28 00:55:23 2011 +0200
+
+    rescatux_lib: Rewrite and simplify rtux_Get_System_HardDisks function with awk.
+    
+    rescatux_lib: Rewrite and simplify rtux_Get_System_HardDisks function with awk.
+    
+    awk will keep only the device names which last character is a character
+    from the latin alphabeth.
+    
+    The hard disk names will be separated by a space.
+    
+    Signed-off-by: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+
+commit 3bc66c66614d743a0564d6ec7257286678f35b68
+Author: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+Date:   Tue Jun 28 00:43:12 2011 +0200
+
+    rescatux_lib: Simplify rtux_Get_Primary_Partitions function to a oneliner.
+    
+    rescatux_lib: Simplify rtux_Get_Primary_Partitions function to a oneliner.
+    
+    Only primary partitions are displayed:
+    awk will keep the device names which last character is 1, 2, 3 or 4 and
+    which second last character is a character from the latin alphabeth.
+    
+    The partition names will be separated by a space.
+    
+    Signed-off-by: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+
+commit dc630955eaf7a42b66f2c839138c60e48585ddfa
+Author: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+Date:   Tue Jun 28 00:30:24 2011 +0200
+
+    rescatux_lib: Rewrite rtux_Get_System_Partitions function with awk only.
+    
+    rescatux_lib: Rewrite rtux_Get_System_Partitions function with awk only.
+    
+    It will skip the first 2 lines of /proc/partitions (header and empty line)
+    and will only print the lines for which the device name ends with a number.
+    
+    Signed-off-by: Gert Hulselmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">gerth at users.berlios.de</A>&gt;
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ rescatux_lib.sh |   37 ++++---------------------------------
+ 1 files changed, 4 insertions(+), 33 deletions(-)
+
+
+hooks/post-receive
+-- 
+Project rescatux at BerliOS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000165.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 9bcef52605b0384f662b5cd8e5f323f77e534278
+</A></li>
+	<LI>Next message: <A HREF="000167.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 68494dc88eac75407f6dc1976a06907e28e1d291
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#166">[ date ]</a>
+              <a href="thread.html#166">[ thread ]</a>
+              <a href="subject.html#166">[ subject ]</a>
+              <a href="author.html#166">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

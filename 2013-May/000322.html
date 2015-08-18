@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] Detect efi bootloaders
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Detect%20efi%20bootloaders&In-Reply-To=%3C51882237.5070607%40users.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000320.html">
+   <LINK REL="Next"  HREF="000321.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] Detect efi bootloaders</H1>
+    <B>Niall Walsh</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20Detect%20efi%20bootloaders&In-Reply-To=%3C51882237.5070607%40users.berlios.de%3E"
+       TITLE="[sgd-en] Detect efi bootloaders">niallwalsh at users.berlios.de
+       </A><BR>
+    <I>Mon May  6 23:35:51 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000320.html">[sgd-en] Detect efi bootloaders
+</A></li>
+        <LI>Next message: <A HREF="000321.html">[sgd-en] Detect efi bootloaders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#322">[ date ]</a>
+              <a href="thread.html#322">[ thread ]</a>
+              <a href="subject.html#322">[ subject ]</a>
+              <a href="author.html#322">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 05/05/13 17:00, adrian15 wrote:
+&gt;<i> I haven't been able to test the EFI stuff.
+</I>&gt;<i>
+</I>&gt;<i> Can you please test:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://forja.cenatic.es/frs/?group_id=204&amp;release_id=754">http://forja.cenatic.es/frs/?group_id=204&amp;release_id=754</A>
+</I>&gt;<i>
+</I>&gt;<i> and report feedback of what works and what not
+</I>It detects Debian/Linux's grubx64.efi and boots it under EFI.  It
+will also boot this system &quot;normally&quot; via the detected kernel/initrd
+(no special kernel options required).
+
+It detects Win8's efi files and bootmgfw.efi at least works to
+boot it.   FTR the &quot;Vista&quot; entry created for the Win8 failed.   I
+got someone else to check this for me in a VM they had handy
+as no Win here.
+
+When booted in bios mode it throws the error message if you
+try and chainload an efi file.  It can of course still boot the
+Debian/Linux system normally (kernel/initrd).
+
+Or IOW afaik new stuff seems to work ok and I didn't find
+anything old newly broken (I'm pretty sure the Win8 as &quot;Vista&quot;
+failure is an old issue).
+
+Thanks,
+
+Niall
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000320.html">[sgd-en] Detect efi bootloaders
+</A></li>
+	<LI>Next message: <A HREF="000321.html">[sgd-en] Detect efi bootloaders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#322">[ date ]</a>
+              <a href="thread.html#322">[ thread ]</a>
+              <a href="subject.html#322">[ subject ]</a>
+              <a href="author.html#322">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

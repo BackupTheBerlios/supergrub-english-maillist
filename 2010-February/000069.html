@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] vista with pointsec boot issue after usb ubuntu install
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20vista%20with%20pointsec%20boot%20issue%20after%20usb%20ubuntu%20install&In-Reply-To=%3C61b292091002121143t76625188v74b82b471e3d1c75%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000068.html">
+   <LINK REL="Next"  HREF="000070.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] vista with pointsec boot issue after usb ubuntu install</H1>
+    <B>Gustavo Tolone</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20vista%20with%20pointsec%20boot%20issue%20after%20usb%20ubuntu%20install&In-Reply-To=%3C61b292091002121143t76625188v74b82b471e3d1c75%40mail.gmail.com%3E"
+       TITLE="[sgd-en] vista with pointsec boot issue after usb ubuntu install">gustavo.tolone at gmail.com
+       </A><BR>
+    <I>Fri Feb 12 20:43:37 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000068.html">[sgd-en] using SGB as the 'real' bootloader?
+</A></li>
+        <LI>Next message: <A HREF="000070.html">[sgd-en] vista with pointsec boot issue after usb ubuntu install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here is my issue please your help.
+
+I tried ubuntu 9.10 from usb on my corporate machine which has windows
+vista and pointsec 6.2.3 on it. After playing around with ubuntu i
+went back to boot my corporate machine as usual but never came back. I
+tried everything that is posted over the net but no success. Even
+supergrub is not working here.
+
+I tried to boot with a windows vista recovery disk and run bootrec
+with Fixmbr, fixboot, no luck. Even tried with XP recovery disk.
+I also tried EasyBCD and supergrub.
+
+Is there anyone who can help me? I am desperate please.
+
+Thanks in advance.
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">canalla at canalla-laptop</A>:~$ sudo sfdisk -lu sdd
+[sudo] password for canalla:
+unrecognized format - using sectors
+
+Disk /dev/sda: 9729 cylinders, 255 heads, 63 sectors/track
+Units = sectors of 512 bytes, counting from 0
+
+  Device Boot    Start       End   #sectors  Id  System
+/dev/sda1   *      2048 156299263  156297216   7  HPFS/NTFS
+/dev/sda2             0         -          0   0  Empty
+/dev/sda3             0         -          0   0  Empty
+/dev/sda4             0         -          0   0  Empty
+
+Disk /dev/sdb: 975 cylinders, 255 heads, 63 sectors/track
+Units = sectors of 512 bytes, counting from 0
+
+  Device Boot    Start       End   #sectors  Id  System
+/dev/sdb1   *        63  14892254   14892192  83  Linux
+/dev/sdb2      14892255  15663374     771120   5  Extended
+/dev/sdb3             0         -          0   0  Empty
+/dev/sdb4             0         -          0   0  Empty
+/dev/sdb5      14892318  15663374     771057  82  Linux swap / Solaris
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000068.html">[sgd-en] using SGB as the 'real' bootloader?
+</A></li>
+	<LI>Next message: <A HREF="000070.html">[sgd-en] vista with pointsec boot issue after usb ubuntu install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

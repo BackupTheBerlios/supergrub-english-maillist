@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. b93175cc8faa35fa6335d638d6a2cab3baacbdef
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-April/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%20b93175cc8faa35fa6335d638d6a2cab3baacbdef&In-Reply-To=%3C20130406141320.8C8BD55B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000303.html">
+   <LINK REL="Next"  HREF="000305.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. b93175cc8faa35fa6335d638d6a2cab3baacbdef</H1>
+    <B>adrian15 at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20branch%2C%20master%2C%0A%09updated.%20b93175cc8faa35fa6335d638d6a2cab3baacbdef&In-Reply-To=%3C20130406141320.8C8BD55B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. b93175cc8faa35fa6335d638d6a2cab3baacbdef">adrian15 at users.berlios.de
+       </A><BR>
+    <I>Sat Apr  6 16:13:20 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000303.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. d5ff927cbea49fc8df8122bd5514b3b0b226e483
+</A></li>
+        <LI>Next message: <A HREF="000305.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 559cf0bacd1889ca178730a0305bb17560175074
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project rescatux at BerliOS&quot;.
+
+The branch, master has been updated
+       via  b93175cc8faa35fa6335d638d6a2cab3baacbdef (commit)
+       via  3be5c00ae0b4fecdd03661c2181e95e75d9bf185 (commit)
+       via  84932384c9694dc131a0df45244e3b02e9af965d (commit)
+       via  ed93f0866c6b0a1fa71e6f0f8ef231bd233c5d10 (commit)
+       via  4de2c8b2ae3a211132cf726fc56ddc6a1ba7bff2 (commit)
+       via  a2a2e1e3c64754a84ee6d18b543035b5f2f87ed9 (commit)
+       via  a332cbb67e10e8cc3f73bcad8e4893c1acda115a (commit)
+      from  d5ff927cbea49fc8df8122bd5514b3b0b226e483 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit b93175cc8faa35fa6335d638d6a2cab3baacbdef
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:52:14 2013 +0200
+
+    * Renamed some Squeeze mentions to Wheezy
+    * chntpw-ng build doc updated to Wheezy
+
+commit 3be5c00ae0b4fecdd03661c2181e95e75d9bf185
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:47:46 2013 +0200
+
+    Update README to Wheezy
+    
+    * Package dependency in order to build Rescatux: live-build instead of live-helper
+    * Removed 'Build backported passwd package' because Wheezy's passwd is ok for resetting passwords
+
+commit 84932384c9694dc131a0df45244e3b02e9af965d
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:41:46 2013 +0200
+
+    * Add gpart package so that Gparted's 'Attempt Data Rescue...' option works ok.
+
+commit ed93f0866c6b0a1fa71e6f0f8ef231bd233c5d10
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:34:48 2013 +0200
+
+    Adapted make_rescatux_hybrid.sh to Wheezy
+    
+    * Hybrid cdrom filename part was changed from -hybrid to .hybrid.
+    * Lxde packages has been replaced by task-lxde-desktop metapackage so we only keep network-manager-gnome package so that wifi network can be setup easily.
+    * Simplified Gksu packages
+    * Simplified Gparted packages
+    * Passwd packages needed in Squeeze because we used a backported Wheezy passwd no longer needed. Removed.
+    * Bootinfo packages removed because xz-utils packages which replaces xz-lzma package is installed by default.
+    * Removed commented, no longer used, gnome minimal packages
+
+commit 4de2c8b2ae3a211132cf726fc56ddc6a1ba7bff2
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:33:37 2013 +0200
+
+    * Default name should be: Rescapp instead of No Name.
+
+commit a2a2e1e3c64754a84ee6d18b543035b5f2f87ed9
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:27:52 2013 +0200
+
+    make_common - Adapt to wheezy - 2nd part
+    
+    * Make use of task-lxde-desktop metapackage instead of all predefined x11-standard package list and lxde package
+    * Add core packages: live-tools, user-setup, sudo and eject so that we use can use apt-recommends false and the live cd is bootable.
+    * Update Skel folder path to Live Boot 3.x
+    * Update Packages Chroot folder to Live Boot 3.x
+    * Update Custom Packages List folder to Live Boot 3.x
+    * Use --updates=false option to ignore updates branch instead of using non-existant volatile branch on Wheezy
+    * Removed deprecated syslinux-menu option
+    * Removed deprecated syslinux-splash option
+    * Added --force-yes option to --apt-options so that packages that cannot be verified from snapshot.debian.org are used.
+
+commit a332cbb67e10e8cc3f73bcad8e4893c1acda115a
+Author: Adrian Gibanel Lopez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian.gibanel at btactic.com</A>&gt;
+Date:   Sat Apr 6 15:26:35 2013 +0200
+
+    rescatux_grub.cfg adapted to Wheezy
+    
+    * Now default kernel (the amd64 one) is found at vmlinuz1 filename instead of vmlinuz filename.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ README                  | 51 +++++--------------------------------------------
+ make_common             | 21 +++++++++++---------
+ make_rescatux_hybrid.sh | 13 +++++--------
+ rescapp.sh.desktop      |  2 +-
+ rescatux_grub.cfg       |  8 ++++----
+ 5 files changed, 27 insertions(+), 68 deletions(-)
+
+
+hooks/post-receive
+-- 
+Project rescatux at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000303.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. d5ff927cbea49fc8df8122bd5514b3b0b226e483
+</A></li>
+	<LI>Next message: <A HREF="000305.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 559cf0bacd1889ca178730a0305bb17560175074
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] How to use supergrub disk to rescue failed grub	install?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20use%20supergrub%20disk%20to%20rescue%20failed%20grub%0A%09install%3F&In-Reply-To=%3C4E44F142.8020502%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000187.html">
+   <LINK REL="Next"  HREF="000189.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] How to use supergrub disk to rescue failed grub	install?</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20use%20supergrub%20disk%20to%20rescue%20failed%20grub%0A%09install%3F&In-Reply-To=%3C4E44F142.8020502%40gmail.com%3E"
+       TITLE="[sgd-en] How to use supergrub disk to rescue failed grub	install?">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Fri Aug 12 11:24:18 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000187.html">[sgd-en] How to use supergrub disk to rescue failed grub install?
+</A></li>
+        <LI>Next message: <A HREF="000189.html">[sgd-en] Boot-Repair-Disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#188">[ date ]</a>
+              <a href="thread.html#188">[ thread ]</a>
+              <a href="subject.html#188">[ subject ]</a>
+              <a href="author.html#188">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 12/08/11 01:35, J.V. escribi&#243;:
+&gt;<i> How do I use the SuperGrub disk to restore my CentOS system to a
+</I>&gt;<i> bootable state?
+</I>&gt;<i>
+</I>&gt;<i> I had CentOS installed and did this:
+</I>&gt;<i>
+</I>&gt;<i> #grub-install /dev/sda1
+</I>&gt;<i>
+</I>&gt;<i> then after reboot, I have a black screen with a single white blinking
+</I>&gt;<i> cursor, I wish to get my OS back.
+</I>&gt;<i>
+</I>&gt;<i> I tried using he CentOS orginal boot media but that packaging of grub is
+</I>&gt;<i> broken.
+</I>&gt;<i> I tried Knoppix but that gave error messages as well, so now trying
+</I>&gt;<i> SuperGrub disk and am getting grief there as well.
+</I>&gt;<i>
+</I>&gt;<i> ---
+</I>&gt;<i> I looked at the supergrub wiki page, but the instructions have menu
+</I>&gt;<i> items that are no longer present in the latest supergrub disk (1.98)
+</I>&gt;<i>
+</I>&gt;<i> any ideas?
+</I>&gt;<i>
+</I>&gt;<i> Can this functionality that was so helpful be put back into the
+</I>&gt;<i> superdisk? It took effort to take it out.
+</I>
+Basically it depends on the filesystem that it is in sda1.
+If I have not forgotten it xfs filesystems do not have a partition boot 
+record and thus get corrupted when doing that.
+
+You should try to boot with Super Grub2 Disk and then run as root:
+
+   grub-install /dev/sda
+
+and see what happens.
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/donate/">http://www.supergrubdisk.org/donate/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000187.html">[sgd-en] How to use supergrub disk to rescue failed grub install?
+</A></li>
+	<LI>Next message: <A HREF="000189.html">[sgd-en] Boot-Repair-Disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#188">[ date ]</a>
+              <a href="thread.html#188">[ thread ]</a>
+              <a href="subject.html#188">[ subject ]</a>
+              <a href="author.html#188">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

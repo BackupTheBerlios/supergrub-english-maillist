@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [PATCH] Update module names for GRUB 1.97
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BPATCH%5D%20Update%20module%20names%20for%20GRUB%201.97&In-Reply-To=%3C9dd6c8710910180321h4cc7acc9y36d564ff67fad08c%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000048.html">
+   <LINK REL="Next"  HREF="000049.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [PATCH] Update module names for GRUB 1.97</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BPATCH%5D%20Update%20module%20names%20for%20GRUB%201.97&In-Reply-To=%3C9dd6c8710910180321h4cc7acc9y36d564ff67fad08c%40mail.gmail.com%3E"
+       TITLE="[sgd-en] [PATCH] Update module names for GRUB 1.97">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Sun Oct 18 12:21:30 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000048.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+        <LI>Next message: <A HREF="000049.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#47">[ date ]</a>
+              <a href="thread.html#47">[ thread ]</a>
+              <a href="subject.html#47">[ subject ]</a>
+              <a href="author.html#47">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Lua was moved to grub-extras upstream so the code for lua is in the
+latest debian unstable source package but isn't enabled. To build a
+package with lua support:
+
+sudo apt-get build-dep grub2
+apt-get source grub2
+cd grub2*
+add &quot;export enable_lua := yes&quot; to debian/rules after enable_915resolution
+fakeroot debian/rules binary
+
+Whenever I get to making a ppa for SG2D I will include the latest
+grub2 from debian unstable + lua support as well.
+
+On Sat, Oct 17, 2009 at 4:34 PM, adrian15 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; wrote:
+&gt;<i> Jordan Uggla escribi&#243;:
+</I>&gt;&gt;<i> I figured out why the CDs I created with GRUB 1.97 beta 3/4 couldn't read
+</I>&gt;&gt;<i> partition tables; the grub module names changed from 1.96 to 1.97. So
+</I>&gt;&gt;<i> while the grub.cfg tried to insmod pc, it needed to insmod part_msdos. I
+</I>&gt;&gt;<i> thought it was a problem with grub-mkrescue because the same grub.cfg
+</I>&gt;&gt;<i> worked when I used it from the same version of grub on my hard drive, not
+</I>&gt;&gt;<i> realizing that on my hard drive part_msdos was already embedded by
+</I>&gt;&gt;<i> grub-install :)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This is a patch to update all of the module names to those used in 1.97.
+</I>&gt;<i>
+</I>&gt;<i> I have tried to build SG2D with all of your changes and whenever I
+</I>&gt;<i> choose my option or yours (not the Boot Ubuntu GNU/Linux) the only thing
+</I>&gt;<i> I see is: Unrecognised command for every line of the lua files.
+</I>&gt;<i>
+</I>&gt;<i> The first errors are:
+</I>&gt;<i>
+</I>&gt;<i> error: unknown command '--'.
+</I>&gt;<i>
+</I>&gt;<i> The grub2 that I installed is three or four days after you told us about
+</I>&gt;<i> this improvement from Debian Unstable.
+</I>&gt;<i>
+</I>&gt;<i> It seems that lua does not get recognised or something.
+</I>&gt;<i> And, yes, it is true: lua.mod does not seem to be found at the
+</I>&gt;<i> /boot/grub/ folder.
+</I>&gt;<i>
+</I>&gt;<i> Maybe original Debian Unstable's Grub does not include lua feature and I
+</I>&gt;<i> was unaware of it (or maybe I have just forgotten about it?)
+</I>&gt;<i>
+</I>&gt;<i> grub-common changelog file says:
+</I>&gt;<i>
+</I>&gt;<i> 2009-09-26 &#160;Robert Millan &#160;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">rmh.grub at aybabtu.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160;* conf/common.rmk (pkglib_MODULES): Remove `lua.mod'.
+</I>&gt;<i>
+</I>&gt;<i> And the last change is:
+</I>&gt;<i>
+</I>&gt;<i> 2009-10-05 &#160;Robert Millan &#160;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">rmh.grub at aybabtu.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160;* configure.ac: Bump version to 1.97~beta4.
+</I>&gt;<i>
+</I>&gt;<i> I do not know if LUA has come back on Debian Unstable yet.
+</I>&gt;<i>
+</I>&gt;<i> adrian15
+</I>&gt;<i> --
+</I>&gt;<i> Support free software. Donate to Super Grub Disk. Apoya el software
+</I>&gt;<i> libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Supergrub-english mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000048.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+	<LI>Next message: <A HREF="000049.html">[sgd-en] [PATCH] Update module names for GRUB 1.97
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#47">[ date ]</a>
+              <a href="thread.html#47">[ thread ]</a>
+              <a href="subject.html#47">[ subject ]</a>
+              <a href="author.html#47">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

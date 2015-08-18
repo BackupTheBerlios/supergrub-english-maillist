@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] {PATCH] Add option to find and load grub.cfg files
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%7BPATCH%5D%20Add%20option%20to%20find%20and%20load%20grub.cfg%20files&In-Reply-To=%3C4AC50504.4010101%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000039.html">
+   <LINK REL="Next"  HREF="000041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] {PATCH] Add option to find and load grub.cfg files</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%7BPATCH%5D%20Add%20option%20to%20find%20and%20load%20grub.cfg%20files&In-Reply-To=%3C4AC50504.4010101%40gmail.com%3E"
+       TITLE="[sgd-en] {PATCH] Add option to find and load grub.cfg files">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Thu Oct  1 21:37:40 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000039.html">[sgd-en] {PATCH] Add option to find and load grub.cfg files
+</A></li>
+        <LI>Next message: <A HREF="000041.html">[sgd-en] [PATCH] Add option to find and load grub.cfg files (	updated )
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jordan Uggla escribi&#243;:
+&gt;<i> Hi all,
+</I>&gt;<i> 
+</I>&gt;<i> I've created a simple lua script that searches for grub.cfg files and
+</I>&gt;<i> makes a menu entry for any that it finds. For Debian based
+</I>&gt;<i> distributions that don't have a separate /boot it also reads the
+</I>&gt;<i> hostname from /etc/hostname and uses it in the menu title. Please test
+</I>&gt;<i> and comment if you are interested.
+</I>&gt;<i> 
+</I>Thank you very much Jordan!
+I will take a look at it at the weekend.
+
+Some points:
+- We should learn some equivalent to configfile. I do not like the 
+source command because it increases the current menu instead of opening 
+a new one.
+
+- I think that /etc/issue is more often meaningful than /etc/hostname. 
+What do you think?
+
+- I will check about how to enable GIT on berlios. I might switch to it 
+too. (One active developer like you has to be rewarded ;).)
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000039.html">[sgd-en] {PATCH] Add option to find and load grub.cfg files
+</A></li>
+	<LI>Next message: <A HREF="000041.html">[sgd-en] [PATCH] Add option to find and load grub.cfg files (	updated )
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

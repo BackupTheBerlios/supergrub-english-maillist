@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 31645940fe430d537699a28d0d5575c2709e22e0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%2031645940fe430d537699a28d0d5575c2709e22e0&In-Reply-To=%3C20120529070503.690B255B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000258.html">
+   <LINK REL="Next"  HREF="000260.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 31645940fe430d537699a28d0d5575c2709e22e0</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%2031645940fe430d537699a28d0d5575c2709e22e0&In-Reply-To=%3C20120529070503.690B255B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 31645940fe430d537699a28d0d5575c2709e22e0">noreply at berlios.de
+       </A><BR>
+    <I>Tue May 29 09:05:03 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000258.html">[sgd-en] Charla de Rescatux / Rescatux talk - May Lleida
+</A></li>
+        <LI>Next message: <A HREF="000260.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 1ddf99718057f144d7a3224069f5299854a0e2e9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  31645940fe430d537699a28d0d5575c2709e22e0 (commit)
+       via  8c6cc9b10ea556487637e587e7f61a6713257123 (commit)
+       via  68f820b02db72dba7c614edd0f131ee63b145324 (commit)
+       via  711e8756f085492bbf170c52036d45f0c4f376e1 (commit)
+       via  da432a61f32e14ddb7877daec3b44b4bf2e04b73 (commit)
+      from  ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 31645940fe430d537699a28d0d5575c2709e22e0
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Thu May 24 16:23:54 2012 -0700
+
+    Append serial terminal in &quot;Enable serial terminal&quot;
+    
+     * Before this commit we used &quot;terminal_output console serial&quot; when we
+     * were &quot;enabling&quot; serial terminal, unfortunately if you happened to be
+     * using an output/input other than console (like gfxterm) that command
+     * would also disable that and switch to console instead (breaking
+     * SG2D's rendering of non-ASCII characters). With this commit we
+     * instead use &quot;terminal_output --append serial; terminal_input --append
+     * serial&quot; which will preserve any existing terminals while adding
+     * serial input/output.
+
+commit 8c6cc9b10ea556487637e587e7f61a6713257123
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Thu May 24 15:19:59 2012 -0700
+
+    Move all &quot;Enable ...&quot; options to a submenu
+    
+     * This cleans up the main menu, and means that scrolling isn't needed
+     * to see the last options in the main menu.
+    
+     * Adds one new translatable string (the title of the submenu).
+
+commit 68f820b02db72dba7c614edd0f131ee63b145324
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sat May 12 20:57:46 2012 -0700
+
+    Remove serial terminal code from autoiso.cfg
+    
+     * It was clearly marked as something to be removed, and IMHO the file
+     * should have never been committed with something like this still in
+     * it.
+
+commit 711e8756f085492bbf170c52036d45f0c4f376e1
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sat May 12 18:11:32 2012 -0700
+
+    Fix indentation in main.cfg
+
+commit da432a61f32e14ddb7877daec3b44b4bf2e04b73
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sat May 12 18:08:44 2012 -0700
+
+    Fix indentation of case statement in supergrub-mkrescue
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/autoiso.cfg  |    6 ----
+ menus/main.cfg     |   93 +++++++++++++++++++++++++++-------------------------
+ po/de.po           |   32 ++++++++++--------
+ po/es.po           |   32 ++++++++++--------
+ po/fr.po           |   32 ++++++++++--------
+ po/ms.po           |   32 ++++++++++--------
+ po/sgrub.pot       |   32 ++++++++++--------
+ supergrub-mkrescue |   12 ++++---
+ 8 files changed, 145 insertions(+), 126 deletions(-)
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000258.html">[sgd-en] Charla de Rescatux / Rescatux talk - May Lleida
+</A></li>
+	<LI>Next message: <A HREF="000260.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 1ddf99718057f144d7a3224069f5299854a0e2e9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

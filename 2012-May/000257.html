@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9&In-Reply-To=%3C20120512235126.8C69C55B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000256.html">
+   <LINK REL="Next"  HREF="000258.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9&In-Reply-To=%3C20120512235126.8C69C55B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9">noreply at berlios.de
+       </A><BR>
+    <I>Sun May 13 01:51:26 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000256.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 77f6eebaec1cbb54638dde4da6be025136abe30e
+</A></li>
+        <LI>Next message: <A HREF="000258.html">[sgd-en] Charla de Rescatux / Rescatux talk - May Lleida
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#257">[ date ]</a>
+              <a href="thread.html#257">[ thread ]</a>
+              <a href="subject.html#257">[ subject ]</a>
+              <a href="author.html#257">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9 (commit)
+       via  9166ca912253a2675ea7ab1231dc98ed8c47ae6a (commit)
+      from  50af6292ef3086d85ed8ff20d805cfd8ca64a076 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit ba99c2ec1aeba4fe2a149ea1c29bfe38d23490b9
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sat May 12 16:37:51 2012 -0700
+
+    Add new vmtest script to ease testing of new code.
+    
+     * vmtest is a bash script which will generate an SG2D iso, configure it
+     * to take input from and output to serial, then test it using kvm with
+     * kvm's -nographic option. I've been doing this for a long time now but
+     * I wanted to automate it more and actually polish / commit this for
+     * others to be able to use as well. This is explained in much more
+     * detail in the comments at the top of vmtest (it's more comment than
+     * code).
+    
+     * To facilitate easily allowing vmtest to generate an SG2D iso which
+     * uses serial terminal by default I added a feature to menus/main.cfg
+     * to source $prefix/sgd_custom.cfg if it exists. This may be useful for
+     * other reasons as well.
+
+commit 9166ca912253a2675ea7ab1231dc98ed8c47ae6a
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Thu May 3 18:36:10 2012 -0700
+
+    Consistently use $prefix rather than /boot/grub/
+    
+     * Also remove setting and use of $script_prefix as it's no longer
+     * needed with grub 2.0 because while now grub-install follows the
+     * convention first introduced in grub-mkrescue of keeping modules in
+     * /boot/grub/$arch/ the $arch portition is no longer included in
+     * $prefix.
+    
+     * Also do some minor cleanup.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/cfgdetect.cfg       |    2 +-
+ menus/grub.cfg            |    2 +-
+ menus/grubdetect.cfg      |    2 +-
+ menus/language_select.cfg |    2 +-
+ menus/main.cfg            |   43 +++++++++++++++++++++++--------------------
+ vmtest                    |   44 ++++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 71 insertions(+), 24 deletions(-)
+ create mode 100755 vmtest
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000256.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 77f6eebaec1cbb54638dde4da6be025136abe30e
+</A></li>
+	<LI>Next message: <A HREF="000258.html">[sgd-en] Charla de Rescatux / Rescatux talk - May Lleida
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#257">[ date ]</a>
+              <a href="thread.html#257">[ thread ]</a>
+              <a href="subject.html#257">[ subject ]</a>
+              <a href="author.html#257">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

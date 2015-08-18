@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] How to autodetect and boot any iso from a pendrive
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2010-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20autodetect%20and%20boot%20any%20iso%20from%20a%20pendrive&In-Reply-To=%3CAANLkTikmEoL3coaAT5R9EM7QfSZ5vXV7mbBVYy6x%2Bkqx%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000107.html">
+   <LINK REL="Next"  HREF="000109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] How to autodetect and boot any iso from a pendrive</H1>
+    <B>Jordan Uggla</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20How%20to%20autodetect%20and%20boot%20any%20iso%20from%20a%20pendrive&In-Reply-To=%3CAANLkTikmEoL3coaAT5R9EM7QfSZ5vXV7mbBVYy6x%2Bkqx%40mail.gmail.com%3E"
+       TITLE="[sgd-en] How to autodetect and boot any iso from a pendrive">jordan.uggla at gmail.com
+       </A><BR>
+    <I>Tue Aug 10 23:21:56 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000107.html">[sgd-en] How to autodetect and boot any iso from a pendrive
+</A></li>
+        <LI>Next message: <A HREF="000109.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7dba4b81586a261af6df1c436786631cf79eef7d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Aug 10, 2010 at 1:37 AM, adrian15 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">adrian15sgd at gmail.com</A>&gt; wrote:
+&gt;<i> <A HREF="http://tecnicoenlaplata.blogspot.com/2010/08/el-regreso-del-freak-super-duper-iso.html">http://tecnicoenlaplata.blogspot.com/2010/08/el-regreso-del-freak-super-duper-iso.html</A>
+</I>&gt;<i>
+</I>&gt;<i> It is written in Spanish but you can just read quote source code in the
+</I>&gt;<i> article and understand what it does.
+</I>&gt;<i>
+</I>&gt;<i> Syslinux boots GRUB4DOS to map and boot SG2D iso which searches iso files
+</I>&gt;<i> and then SG2D tells GRUB4DOS to boot these isos.
+</I>&gt;<i>
+</I>&gt;<i> I do not like the way that GRUB4DOS maps ISOs in memory and I neither do not
+</I>&gt;<i> like its source code but, you know, it might probably work.
+</I>&gt;<i>
+</I>&gt;<i> Just setup the pendrive, and just add ISO files as you wish
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> adrian15
+</I>&gt;<i> --
+</I>&gt;<i> Support free software. Donate to Super Grub Disk. Apoya el software libre.
+</I>&gt;<i> Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Supergrub-english mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Supergrub-english at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">https://lists.berlios.de/mailman/listinfo/supergrub-english</A>
+</I>&gt;<i>
+</I>
+Mapping and chainloading like this won't actually work with the vast
+majority of live isos, you'll get a boot menu but the OS will fail to
+load properly as it will look for its files on the CDROM drive
+(accessing the hardware directly, not through calls to the BIOS).
+
+I don't know why the author of this guide decided to do this when
+isodetect.lua comes with SG2D and actually works with many popular
+GNU/Linux isos. The only isos that I can think of that this method
+will support are Parted Magic (which hard codes the file path to the
+iso, so if you change the name of the iso it fails to boot) and
+specially made Windows isos using winvblock (which if I understand
+correctly uses BIOS calls even after the kernel is loaded). Parted
+magic is already supported by isodetect.lua, without the limitation
+that the file name stay the same. I haven't added support for Windows
+isos with winvblock because, among other things, &quot;map --hook&quot; only
+works with BIOS based systems, where isodetect.lua currently also
+works with EFI, Coreboot, Open Firmware, etc.
+
+-- 
+Jordan Uggla (Jordan_U on irc.freenode.net)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000107.html">[sgd-en] How to autodetect and boot any iso from a pendrive
+</A></li>
+	<LI>Next message: <A HREF="000109.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 7dba4b81586a261af6df1c436786631cf79eef7d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

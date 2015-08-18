@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] SG2D 1.21 released . Please test it.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SG2D%201.21%20released%20.%20Please%20test%20it.&In-Reply-To=%3C4A903C79.3010902%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000028.html">
+   <LINK REL="Next"  HREF="000030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] SG2D 1.21 released . Please test it.</H1>
+    <B>adrian15</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20SG2D%201.21%20released%20.%20Please%20test%20it.&In-Reply-To=%3C4A903C79.3010902%40gmail.com%3E"
+       TITLE="[sgd-en] SG2D 1.21 released . Please test it.">adrian15sgd at gmail.com
+       </A><BR>
+    <I>Sat Aug 22 20:44:09 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000028.html">[sgd-en] r8 - baells/menus
+</A></li>
+        <LI>Next message: <A HREF="000030.html">[sgd-en] No more Super Grub Disk releases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, I have just released Super Grub2 Disk 1.21.
+
+The first thing you should know is that its source code has not been 
+released as a .tar.gz as it is usual. See SOURCE CODE later.
+
+The second thing is that the SG2D now has a new option called AUTO MAGIC 
+BOOT.
+
+The AUTO MAGIC BOOT which uses an improved osdetect.lua from GNU/Grub2 
+project tries to find all the oses from your system and recreates you 
+current menu to add them.
+
+This means that it is something similar to update-grub but live.
+I have only tested with a Ubuntu that I have in one virtual machine.
+ From what I gather it won't work with kernels that are in a /boot 
+partition.
+
+I want you to test this option and gave me back your feedback.
+
+These files for download are found at:
+<A HREF="http://prdownload.berlios.de/supergrub/sgd_floppy_1.21.img.gz">http://prdownload.berlios.de/supergrub/sgd_floppy_1.21.img.gz</A>
+<A HREF="http://prdownload.berlios.de/supergrub/sgd_cdrom_1.21.iso.gz">http://prdownload.berlios.de/supergrub/sgd_cdrom_1.21.iso.gz</A>
+(These are not direct downloads but webpages.)
+
+You are also encouraged to take a look at source code and try to make 
+some changes to it.
+
+I think that it is easy to find /boot/grub/grub.cfg and offer the user
+to chainload it. (Source command can be used, i.e.)
+
+Getting the /etc/issue content and prepending it to grub.cfg chainload 
+menu entry might be more difficult but not impossible.
+
+SOURCE CODE
+============
+
+Source code is revision 8 from baells and baellsdeb branches from the 
+berlios svn.
+
+As you might know baells branch is no longer based on grub legacy but on 
+grub2 so I will update the wiki for reflecting this change.
+
+I will also update the instructions on how to build Super Grub2 Disk 
+(cdrom and floppy) from the baells and ballsdeb source code.
+
+I am going to write these instructions here before editing the wiki:
+
+Basically you download baells and baellsdeb branches from svn. You merge 
+them and then you run:
+
+Debian way)
+============
+
+dpkg-buildpackage -rfakeroot
+This will generate a file in the parent directory called:
+supergrub_1.21-2_i386.deb
+which you can install in your system with:
+dpkg -i ../supergrub_1.21-2_i386.deb
+
+This is supposed to work on Debian Unstable. I do not know what happens 
+in other Debian distributions, Ubuntu or other distributions.
+
+
+Upstream way)
+============
+In upstream way you do not need to get baellsdeb branch at all. It does 
+not harm you to use it but, of course, you will save some bandwith.
+
+You should run make.
+After that you can run
+make install
+as root.
+
+Commmon)
+========
+
+The interesting files you get in your system are:
+/usr/lib/supergrub/sgd_cdrom.iso
+/usr/lib/supergrub/sgd_floppy.img
+
+
+
+
+adrian15
+-- 
+Support free software. Donate to Super Grub Disk. Apoya el software 
+libre. Dona a Super Grub Disk. <A HREF="http://www.supergrubdisk.org/index.php?pid=10">http://www.supergrubdisk.org/index.php?pid=10</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000028.html">[sgd-en] r8 - baells/menus
+</A></li>
+	<LI>Next message: <A HREF="000030.html">[sgd-en] No more Super Grub Disk releases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

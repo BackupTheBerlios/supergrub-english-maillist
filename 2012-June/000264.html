@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 607eb39215f451e878af5399fc12bb42af6ca3de
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20607eb39215f451e878af5399fc12bb42af6ca3de&In-Reply-To=%3C20120604003930.0706C55B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000265.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 607eb39215f451e878af5399fc12bb42af6ca3de</H1>
+    <B>jordanu at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BGit%5DProject%20supergrub%20at%20BerliOS%20branch%2C%20baells%2C%0A%09updated.%20607eb39215f451e878af5399fc12bb42af6ca3de&In-Reply-To=%3C20120604003930.0706C55B0C%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 607eb39215f451e878af5399fc12bb42af6ca3de">noreply at berlios.de
+       </A><BR>
+    <I>Mon Jun  4 02:39:29 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000265.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 02a0ee64d3141586a5f61debe77d6789d2ea7ff8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#264">[ date ]</a>
+              <a href="thread.html#264">[ thread ]</a>
+              <a href="subject.html#264">[ subject ]</a>
+              <a href="author.html#264">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project supergrub at BerliOS&quot;.
+
+The branch, baells has been updated
+       via  607eb39215f451e878af5399fc12bb42af6ca3de (commit)
+       via  48850c5edb27377a98171a5ccebdac1b6ca37b9a (commit)
+       via  14a7bd573bfade8fb2a543b1195e99e828b11ecb (commit)
+      from  1ec9dd8e0ba85c226ac637c154853bda1d9acb38 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 607eb39215f451e878af5399fc12bb42af6ca3de
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Sun Jun 3 17:36:14 2012 -0700
+
+    Add new option for mounting encrypted volums
+    
+     * Currently supports LUKS and geli (I only tested LUKS support)
+    
+     * Adds new translatable string.
+
+commit 48850c5edb27377a98171a5ccebdac1b6ca37b9a
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Wed May 30 17:47:12 2012 -0700
+
+    Clean up menus/grubdetect.cfg
+    
+     * Add comments, fix indentation, and split lines which are longer than
+     * 80 characters.
+
+commit 14a7bd573bfade8fb2a543b1195e99e828b11ecb
+Author: Jordan Uggla &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/supergrub-english">Jordan.Uggla at gmail.com</A>&gt;
+Date:   Wed May 30 17:18:09 2012 -0700
+
+    Export variables controling color
+    
+     * Before the color would return to the default black and white whenever
+     * a submenu was loaded.
+    
+     * Also reworks the code setting the color so that main.cfg doesn't
+     * always enable colors no matter what the value of $bwcolor is. This is
+     * needed so that you can for instance turn off colors then change
+     * languages via the language selection menu and still come back to a
+     * main menu without colors.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ menus/grubdetect.cfg |   16 ++++++++++++----
+ menus/main.cfg       |   45 +++++++++++++++++++++++++++++----------------
+ po/de.po             |   36 ++++++++++++++++++++----------------
+ po/es.po             |   36 ++++++++++++++++++++----------------
+ po/fr.po             |   36 ++++++++++++++++++++----------------
+ po/ms.po             |   36 ++++++++++++++++++++----------------
+ po/sgrub.pot         |   36 ++++++++++++++++++++----------------
+ 7 files changed, 141 insertions(+), 100 deletions(-)
+
+
+hooks/post-receive
+-- 
+Project supergrub at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000265.html">[sgd-en] [Git]Project supergrub at BerliOS branch, baells,	updated. 02a0ee64d3141586a5f61debe77d6789d2ea7ff8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#264">[ date ]</a>
+              <a href="thread.html#264">[ thread ]</a>
+              <a href="subject.html#264">[ subject ]</a>
+              <a href="author.html#264">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>

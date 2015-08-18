@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [sgd-en] [ResGit]Project rescatux at BerliOS annotated tag, v0.31b3,	created. v0.31b3
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/supergrub-english/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20annotated%20tag%2C%20v0.31b3%2C%0A%09created.%20v0.31b3&In-Reply-To=%3C20130609164627.EEFD1BF401%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000326.html">
+   <LINK REL="Next"  HREF="000328.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[sgd-en] [ResGit]Project rescatux at BerliOS annotated tag, v0.31b3,	created. v0.31b3</H1>
+    <B>adrian15 at BerliOS</B> 
+    <A HREF="mailto:supergrub-english%40lists.berlios.de?Subject=Re%3A%20%5Bsgd-en%5D%20%5BResGit%5DProject%20rescatux%20at%20BerliOS%20annotated%20tag%2C%20v0.31b3%2C%0A%09created.%20v0.31b3&In-Reply-To=%3C20130609164627.EEFD1BF401%40scm.berlios.de%3E"
+       TITLE="[sgd-en] [ResGit]Project rescatux at BerliOS annotated tag, v0.31b3,	created. v0.31b3">adrian15 at users.berlios.de
+       </A><BR>
+    <I>Sun Jun  9 18:46:27 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000326.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 0627bddb23ec9ca5a0827e8774dd9dfbdc1c9e49
+</A></li>
+        <LI>Next message: <A HREF="000328.html">[sgd-en] Rescatux 0.31 beta 3 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#327">[ date ]</a>
+              <a href="thread.html#327">[ thread ]</a>
+              <a href="subject.html#327">[ subject ]</a>
+              <a href="author.html#327">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;Project rescatux at BerliOS&quot;.
+
+The annotated tag, v0.31b3 has been created
+        at  e4a7bc2478be4c08a7be1077f5699b1b99395683 (tag)
+   tagging  0627bddb23ec9ca5a0827e8774dd9dfbdc1c9e49 (commit)
+ tagged by  Adrian Gibanel Lopez
+        on  Sun Jun 9 18:45:49 2013 +0200
+
+- Log -----------------------------------------------------------------
+Rescatux 0.31 beta 3 version
+
+Adrian Gibanel Lopez (408):
+      Initial Rescatux 0.20 importation
+      Now Hard Disk size shows hard disk size
+      Fixed bin bash missing at grub-install-run
+      partiton typo fixed
+      Hard disk listing (so that you order them) now shows size
+      Added bash debug at grub-install-run
+      Initial update-grub option as a clone of grub-install option
+      Initial update-grub coding. Fixed sda to variable in grub-install-run script
+      Update grub first implementation - It is looking /dev/actual/sda1 at update-grub
+      Now update-grub seems to work ok even if you have to redefine hard disks order
+      Hard Disk Order selection at update-grub option now also shows size
+      Version based on file
+      Now version is based on VERSION file instead of directory name
+      fsck first implementation finished. Need to be tested
+      Added fs and fsck files in Rescatux files
+      Improved etc_issue function to show non-mounted filesystems. Now fsck has a pulsating progress bar
+      Now base filename is based on version and not on date
+      Source code also is based on version file
+      Rescatux minimal based on gnome
+      Ignore recommendations by default so that the live cd has not so much size
+      Gnome dependencies reduced to a somewhat minimum
+      Rescatux boot menu redesign
+      Version 0.24
+      Syslinux image resized to 640x480
+      Desktop background now equals to boot background
+      Added About option
+      Added About option. Taken in account in build and source code.
+      Documentation files now are html files
+      Rescapp script now opens html documentation files instead of former non-extension documentation files
+      Created template for html documentation based on grub-install and cloned in every option documentation
+      Grub-install option local documentation (only text) was written
+      Now options without run file do not show run file. About updated so that it does not show run option.
+      Updated About documentation to reflect Rescapp copyright
+      Fixed Grub Install local documentation. First version of Update Grub local documentation
+      Minor changenges. Removed last line on local documentation files
+      Fsck option local documentation was started
+      Fsck option local documentation finished
+      Removed web documentation. Item menues system was recoded
+      Fixed new item menu system.
+      Remove unuseful (previous debug) echo of result variable
+      Remove unuseful (previous debug) echo of result variable (and 2)
+      Reorganized string variables. Another result echo was removed.
+      Default path is set up based on the user that runs rescatux. Usually the user one.
+      Directory, name and description strings were converted into variables.
+      Idented rescapp.sh in a nice manner.
+      rescatux_lib.sh was added so that we have kind of a library
+      Adapted web option to use rescatux lib
+      Web option code was reniced
+      Added Rescatux url variable to the rescatux lib and used it on web option
+      Added rescatux irc url variable to rescatux lib. Used rescatux irc url in chat option.
+      Rescatux user prefix for irc variable was introduced and used in chat option
+      Rescatux user prefix for irc variable was introduced and used in chat option (2)
+      Added get desktop width function to lib. Used in chat option. Chat configuration file generation code was improved.
+      Added xchat command and window string to library
+      Chat option code reniced a little bit
+      Xchat command variable typo
+      Grub install script was idented
+      Added Zenity common options to Rescatux lib and applied to rescapp.sh and grub install script
+      Many grub install strings have become variables either in grub install script itself or rescatux lib
+      Added functions for getting system partitions and linux os partitions. Used them in grub install script.
+      Code that implements functions for getting system partitions and linux os partitions was niced.
+      Function for getting etc issue content for zenity was moved to lib. Used in grub install script.
+      Added function for asking the user its main Linux partition. Used in grub install script
+      Added function for getting system hard disks. Used on grub install script.
+      Added rtux_Choose_Hard_Disk function so that the user can choose a hard disk. Used on grub install script. Minor typos.
+      Typo on grub install script when calling rtux_Choose_Hard_Disk function
+      rtux_Choose_Hard_Disk() was used again in grub install script in order to show hard disks to let the user order them later
+      Functions call typo
+      Temporal script on chroot generation was rewritten. (Grub install script)
+      Added functions for success and failure messages. Used on grub install script.
+      Grub install function was created inside grub install script.
+      Fixed some minor bugs that did not let grub install script run ok
+      Removed etc_issue function from update grub script. Rescatux lib is being source on update grub script
+      Update grub script uses rtux_Get_System_HardDisks function
+      Added function so that the user can rename hard disk. Used in update-grub script.
+      rtux_Get_Linux_Os_Partitions function was used on update grub script
+      rtux_Choose_Linux_partition function and rtux_Get_System_HardDisks function were used at update grub script.
+      rtux_Choose_Hard_Disk function was used on update grub script
+      Some identing on update grub script
+      Grub install function on grub install script now show hard disk size (as it already did update grub script
+      Hard disk position choose option was reniced on update grub script
+      Update Grub script was improved with functions and cat EOF
+      rtux_Grub_Update_Config function was created. Grub install script was fixed.
+      rtux_File_Chroot_Script_Device_Map function was created. Minor changes on grub install script.
+      rtux_File_Chroot_Script_Device_Map function was used on grub install script
+      rtux_File_Reordered_Device_Map function was created. It was used on update grub script
+      rtux_File_Reordered_Device_Map function was used on grub install script
+      Minimal niced code on update grub script
+      Final user interaction (Success/Failure) was extracted from grub install function inside grub install script
+      Final user interaction (Success/Failure) was extracted from update grub function inside update grub script
+      Grub install auxiliar functions were fixed so that it works ok
+      Status of grub install function and update grub function are return when finally the function is finished and not before.
+      Update grub auxiliar functions were fixed so that it works ok
+      Minor fix on Grub install script
+      Rescatux lib is used on fsck script. etc_issue function is used on fsck script.
+      Remove hard disk ordering from fsck because it is not needed.
+      Remove some code that was not useful because of being in rescatux lib
+      rtux_Choose_Partition and rtux_Abstract_Choose_Partition functions were added. rtux_Choose_Linux_partition was rewritten to make use of rtux_Abstract_Choose_Partition. fsck script was slightly modified
+      fsck script was rewritten to take into account functions.
+      fsck script unused variable was removed
+      Show log script was rewritten to use general variables
+      Fsck script typo fix.
+      Share log option draft was begin.
+      Etc issue content function now outputs cant mount when it cannot mount a partition. This way the functions that asks for partitions works ok.
+      Share log option draft finished
+      Share log build related changes
+      Share log option was fixed
+      Now pressing cancel on a submenu does not exit rescapp but comes to former menu.
+      Fsck pulsating windows auto closes when the process has been finished.
+      Local and online documentation now work again
+      Chat local documentation was written
+      Share log local documentation was written
+      Show log local documentation was written
+      Online documenation is implemented.
+      online_doc.html files content were emptied because Rescapp do not read them at all
+      Prepared Restore Windows boot option based on grub-install option to implement it
+      Added winmbr documentation
+      Added Get Primary Partitions
+      Added Choose Primary Partition function
+      Winmbr function implemented
+      Added windows options to main menu
+      Added windows options to rescatux cd/usb
+      Added winmbr option to rescatux cd/usb. Minor fix on rescatux_lib.
+      Typo on rtux_Choose_Primary_Partition function on rescatux lib
+      rtux_Winmbr_Install function now returns the correct exit code
+      Typo on rtux_Choose_Hard_Disk_Position function
+      Fix on rtux_Choose_Hard_Disk_Position function
+      Fix on rtux_Winmbr_Install function
+      Version updated to 0.26
+      Winmbr script description was updated
+      Grub-install script was updated to be able to detect grub-install.unsupported from opensuse installations with grub2
+      Grub-install script was updated to be able to detect grub-install.unsupported from opensuse installations with grub2. Typo fixed.
+      Grub-install script for opensuse installations with grub2. Logic was changed to detect with running grub-install.unsupported with --version parametre.
+      Typos on grub-install script
+      Updated version to 0.27
+      Added ntfs-3g package so that we can write in ntfs partitions
+      Added chntpw package so that we can change passwords on windows
+      Rescatux was prepared to develop windows password reset option
+      Added Get Windows Os partitions function based on SAM file
+      Added Get Windows Os partitions function based on SAM file. Fixed the windows directory find algorithm
+      First draft about win password reset option
+      Windows password reset option was improved but not finished.
+      Winpass now should ask which user to reset
+      Fs and fsck options added to source code. They were missing.
+      /dev/stdout should not be checked by fsck. Bug fixed.
+      winpass was improved to find SAM file ok
+      winpass option. Now the user actually chooses a partition
+      winpass typo for checking sam file
+      Fixed some typos on winpass that avoided correct file detection
+      Sam file and security file had a wrong path defined. Fixed.
+      Sam users are saved in an array
+      Winpass is completed. Although it outputs non-succeeded when actually succeeded. To be revised.
+      Trying to use lxde as desktop.
+      Lxde minor improvments.
+      Added network-manager package so that laptop users can have wireless
+      Added bootinfoscript script.
+      Make Boot Info script appear on cd and on source code.
+      Boot Info Script was fixed.
+      Added gawk command so that boot info script runs ok.
+      Boot Info Script was modified so that it fits into Rescapp way
+      First implementation of Share on forum option
+      I include Share log on forum option inside Support options
+      Share log on forum option minimal fixes
+      Share log on forum. Now output file should have the forum post.
+      Boot info script did not run ok because of a lost (
+      Description was not seen on share log on forum option. Fixed.
+      Modified set background script so that it also setups file association in lxde. We want txt files to be opened with leafpad.
+      Desktop is tied up a bit. Only rescapp folder is seen
+      Added Rescapp shortcut in the desktop.
+      Set background script was updated to the new Rescapp location
+      Default file manager now it is: pcmanfm
+      Disabled winpass option. Updated version to 0.28
+      Merge branch 'master' of <A HREF="ssh://git.berlios.de/gitroot/rescatux">ssh://git.berlios.de/gitroot/rescatux</A>
+      Added chntpw source code reference at README.
+      Added chntpw-ng file so that it is found at Rescatux cdrom
+      Now chntpw binary substitues the default chntpw binary
+      Forced -b option so that password is blanked. Exit value is checked against 2 instead of usual 0
+      Added winpass to windows options
+      Updated Rescatux version to 0.29
+      Fixed bug on setbackground.sh so that chntpw is copied ok
+      setbackground.sh had a bug that avoided chntpw-ng to be used instead of traditional chntpw
+      rescapp.py added to Rescatux
+      Added some packages so that rescapp.py works on the live cd
+      Layout was changed so that rescapp is more compact on the screen
+      Version was modified for being smaller. UI made more compact (hopefully)
+      Another attempt to make the UI smaller
+      Rescapp UI was made smaller and some buttons were removed
+      Some changes so that it is not so small at 800x600
+      VERSION file is in the rescapp folder so that rescapp.py can show current version on its title
+      Added rescapp_launcher
+      rescapp.py now uses rescapp_launcher.sh
+      Added tooltips
+      Removed ' from window's title because in LXDE a strange character was shown.
+      rescapp.sh was removed
+      rescapp.py now is run by default
+      Added help-rescapp option
+      Help option is shown by default when no option is selected
+      Now options that have offline doc only or are executable only are shown ok
+      rescapp.py was made executable
+      Removed \r\n from rescapp_version so that the window title shows ok
+      help-rescapp is added to the cdrom and to the source code
+      rescapp_launcher.sh was not found. Fixed that error.
+      Main menu was move to the right top
+      Selected option was removed. Rescue button was renamed to: Run &lt;Name of option&gt; \!
+      Added the description of the selected option as the tooltip of Rescue button
+      Help button is shown instead of Share log on forum button in default screen
+      Rescue button is hidden when the option is not executable
+      Share log and Show log names were written in human language.
+      Some comments from rescapp.py were removed
+      isMenu typo
+      description_label_list was removed
+      code_label_list removed
+      Code was rewritten so that name_button_list was no longer needed
+      Code tidied up a lot. Now the options are not shown when an option that can be run is selected
+      Description is shown when you are about to run an option. The other options are hidden.
+      Back button. At half implementation.
+      Now back button works ok when dealing with menues
+      Now Rescapp has icons to make clear what button is about
+      Version is 0.30 beta 2
+      Support image was replaced for a better one
+      Fixed: [#1328] Fix winmbr not working with two hard disks
+      Fixed: [#1333] Support Fedora's grub2 (grub-install)
+      Better implementation on [#1333] fix
+      Fixed: [#1334] Support Fedora's grub2 (update-grub)
+      Update bootinfoscript to latest GIT version
+      Order python dialog added but not integrated into Rescapp
+      order.py was improved so that it shows labels too
+      First of attempt of rescapp using order.py
+      Added order.py to Rescatux distribution
+      Version is 0.30 beta 3
+      Some changes on rescatux lib so that the new use of order.py works ok
+      order.py now gets its images from Rescapp images
+      Order.py was modified to work ok
+      Added: make_rescatux_sg2d_hybrid.sh script. This is the first attempt for making an SG2D + Rescatux cd
+      Updated version to 0.30b4. Modification to use live-* 3.x in order to be able loop-mount and boot Rescatux from another iso.
+      Loop-mount and live-* 3.x fix. sid.chroot was forgotten.
+      Some folders where needed to be created for apt-pinning at build time to work ok.
+      Force apt preferences file creation.
+      Make sure Sid Chroot config file is created.
+      Added volatile false option so that we can build against a mirror that has not mirrored the updates.
+      Apt pining fixed. It seems that live-* in squeeze is not supported. I had to specify each package manually.
+      Inital spaces at preferences file were making the build to fail.
+      Preferences is fixed once again. It seems that each package should have its own section.
+      Apt-pinning fix.
+      Added rescatux_grub.cfg. This is Rescatux's grub.cfg template.
+      First attempt of making a boot entry for Rescatux
+      Fixed generation of Rescatux's grub.cfg
+      Remove regexp unload which gave an error
+      First attempt to add a background to Rescatux's grub2
+      Grub2 background improvement.
+      Grub2 unicode font is copied
+      Updated logo to the new one
+      Another attempt to make a nice grub2 image
+      First attempt of making a proper grub2 theme
+      Theme was activated
+      Minor adjustments on theme
+      Rescatux's SG2D image now has md5sum.
+      Used experimental debian-live packages to enable findiso. Used findiso option instead of fromiso option
+      Merge branch 'master' of <A HREF="ssh://git.berlios.de/gitroot/rescatux">ssh://git.berlios.de/gitroot/rescatux</A>
+      Fixed that only two disks where detected. Version changed to 0.30b5
+      Trying to use experimental for the right live-* packages. Added experimental repo.
+      Force SG2D to be loaded without the Rescatux theme. Thank you goes for Jordan Uggla for the tip.
+      Lxde Black Background workaround implemented
+      Added RAID and LVM support (dmraid and lvm2)
+      Detect the right number of hard disks fix.
+      Reverted to two columns when running order.py
+      No long run order.py when there's only a hard disk to order.
+      Ctrl+Q makes Rescapp to exit
+      Added main menu Password. Added draft directory for chpasswd option.
+      Added Change Windows password to Password menu
+      Removed unused grub-install height and width variables
+      First draft of Chpasswd feature. Three functions still need to be implemented
+      rtux_User_List function was implemented
+      rtux_Choose_User function implemented.
+      rtux_Enter_Pass function was implemented.
+      Changed version to 0.30b6
+      Password menu and Chpasswd option were added to make source code script
+      Password menu and Chpasswd option were added to the Rescatux build process so that they are included in the final iso
+      Fixed errors on chpasswd option implementation
+      Fix on live-* packages pinning
+      Forced the use of backported passwd package
+      Added backported passwd package dependencies
+      Chroot packages directory was fixed. We were using 3.x path instead of 2.x one which it is one of stable.
+      Change Gnu/Linux password option was disabled because it does not work
+      Sudoers option skeleton added
+      TYPO on sudoers local doc
+      TYPO 2 on sudoers local doc
+      Documentation was clarified so that the user checks if sudoers file is ok or not
+      Sudoers option first implementation
+      Sudoers file now knows if something went wrong when modifying suoders file
+      Sudoers file has 440 permissions
+      Added synaptic to tools inside Rescatux
+      Added Gparted tool to Rescatux
+      Merge branch 'master' into sudoers_option
+      Sudoers success and failure messages were not shown. FIXED.
+      Sudoers documentation typo fix.
+      We change the password with md5 encryption by default. It is less error-prone.
+      Added a notice about the user needing to change its password from its system
+      Chpasswd option is failing while internally has succeeded. FIXED.
+      Chpasswd option is shown by default in Passwd option
+      Bootinfoscript documentation Spanish translation
+      Chat documentation Spanish translation
+      Chpasswd documentation Spanish translation
+      Fsck documentation Spanish translation
+      Share log documentation Spanish translation
+      Share log to Forum documentation Spanish translation
+      Show log documentation Spanish translation
+      Show log documentation Spanish translation - Added previous button
+      Sudoers documentation Spanish translation
+      Winmbr documentation Spanish translation
+      Winpass documentation Spanish translation
+      Improved Update Grub Documentation Spanish translation
+      grub-install documentation Spanish translation
+      Chpasswd documentation was updated to reflect current behaviour
+      Fsck documentation was updated to reflect current behaviour
+      Grub-install documentation was updated to reflect current behaviour
+      Sudoers documentation was updated to reflect current behaviour
+      Update-grub documentation was updated to reflect current behaviour
+      Grub-install documentation was updated to reflect current behaviour. Typo fixed
+      Winmbr documentation was updated to reflect current behaviour. Typo fixed
+      Winpass documentation was updated to reflect current behaviour. Typo fixed
+      Fixed Back image in Spanish documentation
+      Screenshots were added to Bootinfoscript documentation
+      Screenshots were added to Chat documentation
+      Screenshots were added to Chpasswd documentation
+      Screenshots were added to Fsck documentation
+      Screenshots were added to Grub-install documentation
+      Screenshots where added to Share log documentation
+      Screenshots where added to Share log forum documentation
+      Screenshots where added to Show log documentation
+      Screenshots where added to Sudoers documentation
+      Screenshots where added to Update-grub documentation
+      Screenshots where added to Winmbr documentation
+      Screenshots where added to Winpass documentation
+      Help-rescapp documentation was created with screenshots
+      Version is 0.30b7
+      Use unstable packages instead of experimental packages for Live-* packages
+      Use unstable packages instead of experimental packages for Live-* packages. Fixed
+      Use unstable packages instead of experimental packages for Live-* packages. Fixed for the second time.
+      Version is 0.30b8
+      SG2D now shows with black background and correct colours
+      Treat log directory as an empty directory by default.
+      Updated bootinfoscript. Updated bootinfoscript file name. We use default stdout switch for bootinfoscript script.
+      Added xz-lzma package so that bootinfoscript can use unlzma to see where Grub2 points to
+      Bootinfoscript script has to be executable in order to be able to run  it.
+      Added GPL3 to the Rescatux source code
+      Added build intructions to README
+      README fix: Release files are the ones based on sg2d. Changed filenames accordingly.
+      Added Copyright notice on all the libraries, scripts and programs
+      Generate logo script - Removed trailing space on sheebang
+      Fixed sudoers script description
+      Updated Copyright notice in About dialog
+      First attempt to use ISBETA file to mark Beta options
+      Added ISBETA file markers for fsck and winmbr options
+      Using old live-boot package for avoiding kernel panic
+      amd64 to be the default boot entry when using isolinux
+      Version set to 0.30 release candidate 1
+      Version is 0.30
+      Boot fixed for 32bit and 64bit modes
+      Version changed to 0.30.1
+      Fix autodetection so that 64bit is detected ok. Also 64bit now loads 64bit and not 32bit. Idem for 32bit.
+      Version set to 0.30.2
+      First attempt to adapt make_common to Wheezy
+      rescatux_grub.cfg adapted to Wheezy
+      make_common - Adapt to wheezy - 2nd part
+      * Default name should be: Rescapp instead of No Name.
+      Adapted make_rescatux_hybrid.sh to Wheezy
+      * Add gpart package so that Gparted's 'Attempt Data Rescue...' option works ok.
+      Update README to Wheezy
+      * Renamed some Squeeze mentions to Wheezy
+      Version updated to 0.31b1
+      Generate packages file so that package versions are easily shared.
+      Added live-build directory to use package cache
+      Added .gitignore to ignore Rescatux binary files from Git
+      Rescatux build adapted to use live-build directory so that cache directory is used and builds are faster
+      * Raw razor-qt added to Rescatux
+      Add Openbox icon to Rescapp desktop file. Razorqt by default shows no icon for desktop files without icons. Or maybe we are not providing the default icon razorqt uses.
+      * Added siduction repository to be able to use qtfm
+      * Razorqt home files were setup so that
+      razor-powerqt package was added
+      Added juffed editor just in case anyone wants to edit some files.
+      Added Qasmixer so that user can mix its audio
+      VERSION updated to 0.31b2 (0.31 beta 2)
+      Run logo generation as root so that logo images are updated ok
+      Qtfm is used instead of the non-existant pcmanfm from Rescapp to open logs folder
+      Juffed is used instead of the non-existant leafpad from Rescapp to open share log on forum text
+      Most of the help images were improved so that they aren't mistaken as actual buttons.
+      Added a frame so that embedded webpage is seen inside a grey square.
+      make_rescatux_hybrid packages list was rearranged for better reading.
+      Add boot-repair, clean-ubiquity and os-uninstaller programs
+      Select Wheezy as default distribution. Now we cannot longer trust on Wheezy being the testing distro because Wheezy is the new stable Debian distribution.
+      Added testdisk and photorec programs.
+      Added extundelete CLI program for expert users.
+      Ignore temporal or build files so that git doesn't detect them.
+      Added expert tools menus for accomodating: boot-repair and testdisk
+      Implemented boot-repair option
+      Added testdisk option to Rescapp
+      Added photorec option to Rescapp
+      Added gparted option to Rescapp
+      TYPO at photorec run script
+      Rescatux files at make_common script were rewritten to make them more clear
+      Added expert tools: boot-repair, testdisk, photorec and gparted to Rescatux build process
+      Added os-uninstaller option to Rescapp and to Rescatux build process
+      Now xchat nickname shows Rescapp version so that accurate help can be given in the chat.
+      VERSION updated to 0.31b3 (0.31 beta 3)
+      Show Rescatux background on new Razorqt desktop
+      Rescatux background shown without loosing other desktop customisations. This is because Razorqt is now 0.5 version and not 0.4 version.
+      Remove analog clock from desktop
+
+Gert Hulselmans (6):
+      rescatux_lib: Rewrite rtux_Get_System_Partitions function with awk only.
+      rescatux_lib: Simplify rtux_Get_Primary_Partitions function to a oneliner.
+      rescatux_lib: Rewrite and simplify rtux_Get_System_HardDisks function with awk.
+      rescatux_lib: Detect also partition names which end with a 0 in the rtux_Get_System_Partitions function.
+      Merge branch 'master' of <A HREF="ssh://git.berlios.de/gitroot/rescatux">ssh://git.berlios.de/gitroot/rescatux</A>
+      rescatux_lib: Fix rtux_Get_System_HardDisks function and detect all hard disks.
+
+kallen (1):
+      Translate update-grub to Spanish and Catalan
+
+-----------------------------------------------------------------------
+
+
+hooks/post-receive
+-- 
+Project rescatux at BerliOS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000326.html">[sgd-en] [ResGit]Project rescatux at BerliOS branch, master,	updated. 0627bddb23ec9ca5a0827e8774dd9dfbdc1c9e49
+</A></li>
+	<LI>Next message: <A HREF="000328.html">[sgd-en] Rescatux 0.31 beta 3 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#327">[ date ]</a>
+              <a href="thread.html#327">[ thread ]</a>
+              <a href="subject.html#327">[ subject ]</a>
+              <a href="author.html#327">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/supergrub-english">More information about the Supergrub-english
+mailing list</a><br>
+</body></html>
